@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_types
+
   resources :presentations
 
   resources :workshops
