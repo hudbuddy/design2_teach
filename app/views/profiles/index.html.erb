@@ -1,0 +1,45 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Profile picture</th>
+      <th>Background picture</th>
+      <th>Bio</th>
+      <th>Personal site url</th>
+      <th>Twitter url</th>
+      <th>Linkedin url</th>
+      <th>Facebook url</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.user %></td>
+        <td><%= profile.first_name %></td>
+        <td><%= profile.last_name %></td>
+        <td><%= profile.profile_picture %></td>
+        <td><%= profile.background_picture %></td>
+        <td><%= profile.bio %></td>
+        <td><%= profile.personal_site_url %></td>
+        <td><%= profile.twitter_url %></td>
+        <td><%= profile.linkedin_url %></td>
+        <td><%= profile.facebook_url %></td>
+        <td><%= profile.deleted_at %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>
