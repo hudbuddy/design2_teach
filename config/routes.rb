@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+
   resources :youtube_channels
 
   resources :learning_pieces
