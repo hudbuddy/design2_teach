@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @learning_piece.title %>
+</p>
+
+<p>
+  <strong>Description short:</strong>
+  <%= @learning_piece.description_short %>
+</p>
+
+<p>
+  <strong>Description long:</strong>
+  <%= @learning_piece.description_long %>
+</p>
+
+<p>
+  <strong>Youtube url:</strong>
+  <%= @learning_piece.youtube_url %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @learning_piece.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_learning_piece_path(@learning_piece) %> |
+<%= link_to 'Back', learning_pieces_path %>
