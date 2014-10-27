@@ -1,0 +1,35 @@
+<h1>Listing workshops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Picture url</th>
+      <th>Link url</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workshops.each do |workshop| %>
+      <tr>
+        <td><%= workshop.profile %></td>
+        <td><%= workshop.title %></td>
+        <td><%= workshop.description %></td>
+        <td><%= workshop.picture_url %></td>
+        <td><%= workshop.link_url %></td>
+        <td><%= workshop.deleted_at %></td>
+        <td><%= link_to 'Show', workshop %></td>
+        <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
+        <td><%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workshop', new_workshop_path %>

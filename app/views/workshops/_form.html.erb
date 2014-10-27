@@ -1,0 +1,16 @@
+<%= simple_form_for(@workshop) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :profile %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :picture_url %>
+    <%= f.input :link_url %>
+    <%= f.input :deleted_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

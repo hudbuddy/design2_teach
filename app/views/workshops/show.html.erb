@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @workshop.profile %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @workshop.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @workshop.description %>
+</p>
+
+<p>
+  <strong>Picture url:</strong>
+  <%= @workshop.picture_url %>
+</p>
+
+<p>
+  <strong>Link url:</strong>
+  <%= @workshop.link_url %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @workshop.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
+<%= link_to 'Back', workshops_path %>
