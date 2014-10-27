@@ -3,4 +3,5 @@ class Profile < ActiveRecord::Base
   has_many :presentations
   has_many :workshops
   has_many :youtube_channels
+  has_many :links
 end
