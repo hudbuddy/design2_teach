@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @presentation.profile %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @presentation.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @presentation.description %>
+</p>
+
+<p>
+  <strong>Picture url:</strong>
+  <%= @presentation.picture_url %>
+</p>
+
+<p>
+  <strong>Link url:</strong>
+  <%= @presentation.link_url %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @presentation.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :presentations
+
   resources :workshops
 
   resources :products
