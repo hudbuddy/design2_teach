@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @youtube_channel.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @youtube_channel.url %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @youtube_channel.profile %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @youtube_channel.deleted_at %>
+</p>
+
+<%= link_to 'Edit', edit_youtube_channel_path(@youtube_channel) %> |
+<%= link_to 'Back', youtube_channels_path %>

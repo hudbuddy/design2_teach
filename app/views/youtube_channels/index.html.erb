@@ -1,0 +1,31 @@
+<h1>Listing youtube_channels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Profile</th>
+      <th>Deleted at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @youtube_channels.each do |youtube_channel| %>
+      <tr>
+        <td><%= youtube_channel.title %></td>
+        <td><%= youtube_channel.url %></td>
+        <td><%= youtube_channel.profile %></td>
+        <td><%= youtube_channel.deleted_at %></td>
+        <td><%= link_to 'Show', youtube_channel %></td>
+        <td><%= link_to 'Edit', edit_youtube_channel_path(youtube_channel) %></td>
+        <td><%= link_to 'Destroy', youtube_channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Youtube channel', new_youtube_channel_path %>
