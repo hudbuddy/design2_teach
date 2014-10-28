@@ -6,6 +6,7 @@ class CreateLearningPieces < ActiveRecord::Migration
       t.text :description_long
       t.string :youtube_url
       t.datetime :deleted_at
+      t.references :user, :topic, index: true
 
       t.timestamps
     end

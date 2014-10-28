@@ -1,7 +1,7 @@
 class CreatePresentations < ActiveRecord::Migration
   def change
     create_table :presentations do |t|
-      t.references :profile, index: true
+      t.references :user, index: true
       t.string :title
       t.string :description
       t.string :picture_url
