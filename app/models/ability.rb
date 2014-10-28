@@ -28,5 +28,22 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+
+    user ||= User.new
+    if (user.user_type != nil)
+      if user.user_type.title == "superadmin"
+        can :manage, :all
+      elsif user.user_type.title == "admin"
+        can :manage, :all
+      else
+        can :read, :all
+      end
+    else
+      can :read, :all
+    end
+
+
+
+
   end
 end

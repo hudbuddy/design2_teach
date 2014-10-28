@@ -3,8 +3,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     super do
-      resource.user_types.create(type: 'superadmin');
       resource.save
+      @user = User.find_by_id(resource.id)
+      @user_type = UserType.create(title: "superadmin")
+      @user.user_type = @user_type
+
     end
   end
 

@@ -1,4 +1,5 @@
 class LearningPiecesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_learning_piece, only: [:show, :edit, :update, :destroy]
 
   # GET /learning_pieces
