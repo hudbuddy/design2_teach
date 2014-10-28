@@ -1,3 +1,3 @@
 class Topic < ActiveRecord::Base
-  belongs_to :learning_piece
+  has_many :learning_pieces
 end

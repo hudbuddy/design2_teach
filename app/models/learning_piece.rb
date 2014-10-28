@@ -1,4 +1,4 @@
 class LearningPiece < ActiveRecord::Base
-  has_many :users
-  has_many :topics
+  belongs_to :user
+  belongs_to :topic
 end

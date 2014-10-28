@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   has_one :profile
   has_one :user_type
-  belongs_to :learning_piece
+  has_many :workshops
+  has_many :learning_pieces
+  has_many :presentations
+
 end
