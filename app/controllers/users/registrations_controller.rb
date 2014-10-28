@@ -2,7 +2,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   include ApplicationHelper
 
   def create
-    super
+    super do
+      resource.user_types.create(type: 'superadmin');
+      resource.save
+    end
   end
 
   def new
