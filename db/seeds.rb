@@ -76,6 +76,7 @@ users.each do |u|
     ut = UserType.create(title: "user")
   end
   u.user_type = ut
+  u.profile = Profile.create()
 end
 learning_pieces.each do |lp|
   lp.user = User.find(1)

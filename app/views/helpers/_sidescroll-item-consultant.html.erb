@@ -1,0 +1,5 @@
+<%= item = get_proper_format_for_sidescroll_item(item, coll_type) %>
+<div class="sidescrollable-item" style="background-image: url(<%= item.profile_picture %>)">
+    <h3><%= item.firstname %> <%= item.lastname %></h3>
+    <div><%= item.bio %></div>
+</div>

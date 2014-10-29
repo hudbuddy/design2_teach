@@ -1,2 +1,17 @@
-<h1>Landings#index</h1>
-<p>Find me in app/views/landings/index.html.erb</p>
+<div data-page="home">
+  <div class="home-top">
+    <h1>Design2Teach</h1>
+  </div>
+    <section class="home-section">
+      <h2>Learning Pieces</h2>
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces' }  %>
+    </section>
+    <section class="home-section">
+      <h2>Consultants</h2>
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants' }  %>
+    </section>
+    <section class="home-section">
+      <h2>Products</h2>
+
+    </section>
+</div>
