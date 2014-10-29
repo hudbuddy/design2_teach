@@ -1,0 +1,36 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-inputs {
+  margin: 14px;
+}
+
+.form-inputs label {
+  width: 200px;
+  display: inline-block;
+}
+
+.form-inputs input{
+  border: 2px solid black ;
+  margin: 14px;
+
+}
+
+.form-inputs input:focus {
+  border: 2px solid darkgray;
+
+}
+
+.form-actions .btn {
+  border: 2px solid gray;
+  background-color: white;
+}
+
+.form-actions .btn:hover {
+  background-color: darkgray;
+}
+
+.form-actions .btn:active {
+  background-color: lightblue;
+}

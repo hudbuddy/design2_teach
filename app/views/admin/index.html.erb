@@ -1,0 +1,24 @@
+<h1>Administration</h1>
+
+
+<% if can? :manage, @user %>
+    <p>Create User</p>
+    <%= simple_form_for @user, :as => :user, url: admin_path, method: :post do |f| %>
+
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+          <%= f.input :password_confirmation, required: true %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Create User" %>
+        </div>
+    <% end %>
+<% end %>
+
+<p>Add a product.</p>
+<%= button_to "Add Product", new_product_path, method: :get%>
+
+<p>Add a learning piece.</p>
+<%= button_to "Add Learning", new_learning_piece_path, method: :get%>
