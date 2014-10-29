@@ -12,6 +12,6 @@
     </section>
     <section class="home-section">
       <h2>Products</h2>
-
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @products, coll_type: 'products' }  %>
     </section>
 </div>

@@ -1,10 +1,4 @@
 <!--Takes a coll_type-->
 <div class="sidescrollable-container">
-  <%= if coll_type == "learning_pieces" %>
-    <%= render partial: "helpers/sidescroll-item", locals: { coll_type: coll_type }, collection: coll, as: :item %>
-  <%= elsif coll_type == "consultants" %>
-    <%= render partial: "helpers/sidescroll-item-consultant", locals: { coll_type: coll_type }, collection: coll, as: :item %>
-  <%= elsif coll_type == "products" %>
-
-  <%= end %>
+  <%= render partial: "helpers/sidescroll-item", locals: { coll_type: coll_type }, collection: coll, as: :item %>
 </div>

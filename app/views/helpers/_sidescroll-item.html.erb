@@ -1,5 +1,27 @@
-<%= item = get_proper_format_for_sidescroll_item(item, coll_type) %>
-<div class="sidescrollable-item" style="background-image: url(<%=  %>)">
+<% item = get_proper_format_for_sidescroll_item(item, coll_type) %>
+<div class="sidescrollable-item">
+
+<% if coll_type.eql? "learning_pieces" %>
+
+  <div class="item-background" style="background-image: url(<%=  %>)">
     <h3><%= item.title %></h3>
     <div><%= item.description_short %></div>
+  </div>
+
+<% elsif coll_type.eql? "consultants" %>
+
+  <div class="item-background" style="background-image: url(<%= item.profile_picture %>)">
+    <h3><%= item.first_name %> <%= item.last_name %></h3>
+    <div><%= item.bio %></div>
+  </div>
+
+<% elsif coll_type.eql? "products" %>
+
+  <div class="item-background" style="background-image: url(<%= item.picture_url %>)">
+    <h3><%= item.title %></h3>
+    <div><%= item.description %></div>
+  </div>
+
+<% end %>
+
 </div>

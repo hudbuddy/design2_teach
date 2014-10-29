@@ -3,7 +3,7 @@ module LandingsHelper
     if type === "consultants"
       model = model.profile
       # model.picture = model.profile_picture
-    elsif type == "learning_pieces"
+    else
       model = model
     end
     model

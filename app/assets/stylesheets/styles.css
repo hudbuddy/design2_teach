@@ -26,9 +26,7 @@ p {
     font-size: 13px;
 }
 [data-page="home"] h1,
-[data-page="home"] h2,
-[data-page="home"] h3,
-[data-page="home"] h4 {
+[data-page="home"] h2 {
     margin-left: 20px;
 }
 #nav-temp {
@@ -65,5 +63,10 @@ p {
     float: left;
     margin: 10px;
     border: 1px solid #999;
+}
+.sidescrollable-item .item-background {
+    height: 100%;
+    width: 100%;
     padding: 20px;
+    background-size: cover;
 }
