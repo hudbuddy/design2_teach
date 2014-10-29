@@ -10,7 +10,15 @@ class ApplicationController < ActionController::Base
   end
 
 
+  before_filter do
+    resource = controller_name.singularize.to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to :root, :alert => exception.message
+  end
 
 
   private

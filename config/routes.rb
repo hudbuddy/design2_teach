@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   get 'landings/index'
 
   resources :profiles
@@ -85,5 +87,8 @@ Rails.application.routes.draw do
     put    "signup"  => "users/registrations#update", as: :update_user_registration
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
   end
+
+  get "admin" => "admin#index"
+  post "admin" => "admin#create_user"
 
 end
