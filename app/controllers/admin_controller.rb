@@ -12,8 +12,7 @@ class AdminController < ApplicationController
 
   def create_user
     @user = User.new(user_params)
-    @user_type = UserType.create(title: "superadmin")
-    @user.user_type = @user_type
+    @user.profile = Profile.create()
     if(@user.valid?)
       @user.save
       render :action => "index"
@@ -25,7 +24,7 @@ class AdminController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :user_type_id)
   end
 
 end
