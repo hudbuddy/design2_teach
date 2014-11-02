@@ -69,6 +69,6 @@ class UserTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_type_params
-      params.require(:user_type).permit(:user_id, :type, :deleted_at)
+      params.require(:user_type).permit(:type)
     end
 end
