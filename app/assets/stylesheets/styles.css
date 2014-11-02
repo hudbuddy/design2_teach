@@ -48,21 +48,37 @@ p {
 }
 .home-section {
     height: 220px;
+    overflow: hidden;
 }
 .home-section h2 {
     height: 40px;
     line-height: 40px;
 }
-.sidescrollable-container {
-    height: 180px;
+
+.learning-piece-wrapper {
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: hidden;
     background: #333;
+    width: 100%;
 }
+
+.sidescrollable-container {
+    height: 100%;
+    width: 200%;
+
+
+}
+
+
 .sidescrollable-item {
     width: 180px;
     height: 160px;
     float: left;
     margin: 10px;
     border: 1px solid #999;
+
+
 }
 .sidescrollable-item .item-background {
     height: 100%;

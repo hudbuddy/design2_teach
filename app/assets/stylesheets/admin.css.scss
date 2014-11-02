@@ -2,6 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.AdminTools {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  position: relative;
+}
+
+.new_user {
+  border: 3px solid black;
+  background: gray;
+}
+
 .form-inputs {
   margin: 14px;
 }
@@ -13,6 +25,7 @@
 
 .form-inputs input{
   border: 2px solid black ;
+  color: black;
   margin: 14px;
 
 }
@@ -22,15 +35,22 @@
 
 }
 
-.form-actions .btn {
+.btn {
+  color: black;
   border: 2px solid gray;
   background-color: white;
+  margin: 15px;
+  width: 200px;
 }
 
-.form-actions .btn:hover {
+.btn:hover {
   background-color: darkgray;
 }
 
-.form-actions .btn:active {
+.btn:active {
   background-color: lightblue;
+}
+
+div input {
+  color: black
 }
