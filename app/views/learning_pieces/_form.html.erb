@@ -6,7 +6,9 @@
     <%= f.input :description_short %>
     <%= f.input :description_long %>
     <%= f.input :youtube_url %>
-    <%= f.input :deleted_at %>
+    <%= f.input :picture %>
+    <%= f.association :user %>
+    <%= f.association :topic %>
   </div>
 
   <div class="form-actions">

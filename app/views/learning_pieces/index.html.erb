@@ -15,11 +15,11 @@
   <tbody>
     <% @learning_pieces.each do |learning_piece| %>
       <tr>
+        <td><%= learning_piece.user %></td>
         <td><%= learning_piece.title %></td>
         <td><%= learning_piece.description_short %></td>
         <td><%= learning_piece.description_long %></td>
         <td><%= learning_piece.youtube_url %></td>
-        <td><%= learning_piece.deleted_at %></td>
         <td><%= link_to 'Show', learning_piece %></td>
         <td><%= link_to 'Edit', edit_learning_piece_path(learning_piece) %></td>
         <td><%= link_to 'Destroy', learning_piece, method: :delete, data: { confirm: 'Are you sure?' } %></td>

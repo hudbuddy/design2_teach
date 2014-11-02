@@ -16,12 +16,11 @@
   <tbody>
     <% @presentations.each do |presentation| %>
       <tr>
-        <td><%= presentation.profile %></td>
+        <td><%= presentation.user %></td>
         <td><%= presentation.title %></td>
         <td><%= presentation.description %></td>
         <td><%= presentation.picture_url %></td>
         <td><%= presentation.link_url %></td>
-        <td><%= presentation.deleted_at %></td>
         <td><%= link_to 'Show', presentation %></td>
         <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
         <td><%= link_to 'Destroy', presentation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

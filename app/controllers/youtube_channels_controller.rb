@@ -69,6 +69,6 @@ class YoutubeChannelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def youtube_channel_params
-      params.require(:youtube_channel).permit(:title, :url, :profile_id, :deleted_at)
+      params.require(:youtube_channel).permit(:title, :url, :profile_id)
     end
 end
