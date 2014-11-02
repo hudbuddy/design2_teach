@@ -6,21 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
-   { email: 'val8819@gmail.com' , password: 'supermom!' },
-   { email: 'fakesuper@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeadmin@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult1@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult2@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult3@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult4@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult5@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeconsult6@gmail.com' , password: 'aaaaaaaa' },
-   { email: 'fakeuser@gmail.com' , password: 'aaaaaaaa' },
-]);
-User.where('user_type');
+userTypes = UserType.create([{ title: 'superadmin' }, { title: 'admin' }, { title: 'consultant' }, { title: 'user' }]);
 topics = Topic.create([{ title: 'Pets' }, { title: 'Education' }, { title: 'Animals' }]);
+users = User.create([
+   { email: 'val8819@gmail.com' , password: 'supermom!', user_type_id: 1 },
+   { email: 'fakesuper@gmail.com' , password: 'aaaaaaaa', user_type_id: 1 },
+   { email: 'fakeadmin@gmail.com' , password: 'aaaaaaaa', user_type_id: 2 },
+   { email: 'fakeconsult@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult1@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult2@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult3@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult4@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult5@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeconsult6@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
+   { email: 'fakeuser@gmail.com' , password: 'aaaaaaaa', user_type_id: 4 },
+]);
 learning_pieces = LearningPiece.create([
     {
       title: 'Learn About Cats In 10 Minutes',
@@ -66,22 +66,14 @@ learning_pieces = LearningPiece.create([
     },
 ])
 users.each do |u|
-  if u.email.include?("val") || u.email.include?("super")
-    ut = UserType.create(title: "superadmin")
-  elsif u.email.include?("admin")
-    ut = UserType.create(title: "admin")
-  elsif u.email.include?("consult")
-    ut = UserType.create(title: "consultant")
-  else
-    ut = UserType.create(title: "user")
-  end
-  u.user_type = ut
   u.profile = Profile.create()
 end
+
 learning_pieces.each do |lp|
   lp.user = User.find(1)
   lp.topics << Topic.all;
 end
+
 products = Product.create([
     {
       title: 'Cool Website',
