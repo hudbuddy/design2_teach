@@ -12,6 +12,7 @@ html {
     -ms-box-sizing: border-box;
     margin: 0;
     color: #EEE;
+    text-decoration: none;
 }
 input,
 button,
@@ -25,15 +26,95 @@ div,
 p {
     font-size: 13px;
 }
+/* Background Colors */
+.bg-p {
+    background: #46484A;
+}
+.bg-s {
+    background: #2B2C2F;
+}
+/* Primary Colors */
+.t-p { /* Text (t) */
+    color: #FFA682;
+}
+.b-p { /* Background (b) */
+    background: #FFA682;
+}
+/* Primary Colors (Light) */
+.t-p-l {
+    color: #FFC1A8;
+}
+.b-p-l {
+    background: #FFC1A8;
+}
+/* Secondary Colors */
+.t-s {
+    color: #5E8BAE;
+}
+.t-s.hvr:hover {
+    color: #6E9FC5;
+}
+.b-s {
+    background: #5E8BAE;
+}
+/* Secondary Colors (Light) */
+.t-s-l {
+    color: #8DB2CF;
+}
+.b-s-l {
+    background: #8DB2CF;
+}
+/* Accent Colors */
+.t-a {
+    color: #A9E676;
+}
+.b-a {
+    background: #A9E676;
+}
+/* Accent Colors (Light) */
+.t-a-l {
+    color: #C3F09E;
+}
+.b-a-l {
+    background: #C3F09E;
+}
+
+
 [data-page="home"] h1,
 [data-page="home"] h2 {
     margin-left: 20px;
 }
-#nav-temp {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
+#nav {
+    color: #bbb;
+    position: relative;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    background: rgb(39, 41, 44);
+    box-shadow: 0 0 5px black;
+    z-index: 5;
+}
+#nav #sign-out {
+    margin-left: 10px;
+}
+.user-email {
+    color: #eee;
+}
+.nav-btn:first-of-type {
+    margin-left: 20px;
+}
+.nav-btn {
+    padding: 5px 10px;
+    margin: 0 0 0 2px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid black;
+}
+.nav-btn:hover {
+    background: rgba(100, 100, 100, 0.4);
+}
+.nav-btn:active {
+    box-shadow: 0 0 2px 1px rgba(0,0,0,.3) inset;
 }
 .home-top {
     height: 320px;
