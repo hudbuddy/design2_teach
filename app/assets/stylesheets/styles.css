@@ -55,6 +55,21 @@ p {
     line-height: 40px;
 }
 
+.learning-piece-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.consultants-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.products-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 .sidescrollable-wrapper {
     height: 200px;
     overflow-x: auto;
@@ -65,8 +80,6 @@ p {
 
 .sidescrollable-container {
     height: 100%;
-    width: 200%;
-
 
 }
 

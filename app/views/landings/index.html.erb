@@ -1,17 +1,25 @@
+<%= javascript_include_tag "landings" %>
+
 <div data-page="home">
   <div class="home-top">
     <h1>Design2Teach</h1>
   </div>
     <section id="learning-pieces-section" class="home-section">
       <h2>Learning Pieces</h2>
-      <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces' }  %>
+      <div class="learning-piece-wrapper">
+        <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces' }  %>
+      </div>
     </section>
-    <section class="home-section">
+    <section id="consultant-section" class="home-section">
       <h2>Consultants</h2>
-      <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants' }  %>
+      <div class="consultants-wrapper">
+        <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants' }  %>
+      </div>
     </section>
-    <section class="home-section">
+    <section id="products-section" class="home-section">
       <h2>Products</h2>
-      <%= render partial: "helpers/sidescrollable", locals: { coll: @products, coll_type: 'products' }  %>
+      <div class="products-wrapper">
+        <%= render partial: "helpers/sidescrollable", locals: { coll: @products, coll_type: 'products' }  %>
+      </div>
     </section>
 </div>
