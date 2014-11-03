@@ -55,7 +55,7 @@ p {
     line-height: 40px;
 }
 
-.learning-piece-wrapper {
+.sidescrollable-wrapper {
     height: 200px;
     overflow-x: auto;
     overflow-y: hidden;
