@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'admin/index'
+  get "admin/index"
 
-  get 'landings/index'
+  get "landings/index"
 
   resources :profiles
 
@@ -24,13 +24,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landings#index'
+  root "landings#index"
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get "products/:id" => "catalog#view"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get "products/:id/purchase" => "catalog#purchase", as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -38,12 +38,12 @@ Rails.application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
-  #       post 'toggle'
+  #       get "short"
+  #       post "toggle"
   #     end
   #
   #     collection do
-  #       get 'sold'
+  #       get "sold"
   #     end
   #   end
 
@@ -57,13 +57,13 @@ Rails.application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', on: :collection
+  #       get "recent", on: :collection
   #     end
   #   end
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     post "toggle"
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
@@ -90,5 +90,8 @@ Rails.application.routes.draw do
 
   get "admin" => "admin#index"
   post "admin" => "admin#create_user"
+  get "consultants/new" => "consultants#create",            as: :new_consultant
+  get "consultants/:id" => "consultants#show",                 as: :consultant
+  get "consultants" => "consultants#index",                    as: :consultants
 
 end

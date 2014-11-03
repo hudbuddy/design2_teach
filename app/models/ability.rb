@@ -30,10 +30,8 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new
-    if (user.user_type != nil)
-      if user.user_type.title == "superadmin"
-        can :manage, :all
-      elsif user.user_type.title == "admin"
+    if (user.is_consultant)
+      if user.is_admin
         can :manage, :all
       else
         can :read, :all

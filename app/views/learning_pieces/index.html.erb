@@ -1,33 +1,3 @@
-<h1>Listing learning_pieces</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description short</th>
-      <th>Description long</th>
-      <th>Youtube url</th>
-      <th>Deleted at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @learning_pieces.each do |learning_piece| %>
-      <tr>
-        <td><%= learning_piece.user %></td>
-        <td><%= learning_piece.title %></td>
-        <td><%= learning_piece.description_short %></td>
-        <td><%= learning_piece.description_long %></td>
-        <td><%= learning_piece.youtube_url %></td>
-        <td><%= link_to 'Show', learning_piece %></td>
-        <td><%= link_to 'Edit', edit_learning_piece_path(learning_piece) %></td>
-        <td><%= link_to 'Destroy', learning_piece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Learning piece', new_learning_piece_path %>
+<h1>Learning Pieces</h1>
+<%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @learning_pieces, as: :item %>
+<%= link_to 'New Learning piece', new_learning_piece_path if current_user.is_admin  %>

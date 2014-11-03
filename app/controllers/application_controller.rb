@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to :root, :alert => exception.message
+    redirect_to :new_user_session, :alert => exception.message
   end
 
 
