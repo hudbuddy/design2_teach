@@ -1,4 +1,6 @@
-<h1>Administration</h1>
+<div data-page="home">
+  <div class="home-top"><h1>Administration</h1></div>
+  <div class="AdminTools">
 
 
 <% if can? :manage, @user %>
@@ -18,8 +20,11 @@
     <% end %>
 <% end %>
 
-<p>Add a product.</p>
-<%= button_to "Add Product", new_product_path, method: :get%>
 
-<p>Add a learning piece.</p>
-<%= button_to "Add Learning", new_learning_piece_path, method: :get%>
+    <%= button_to "Add Product", new_product_path, class: "btn", method: :get%>
+
+
+    <%= button_to "Add Learning", new_learning_piece_path, class: "btn", method: :get%>
+  </div>
+  </div>
+</div>
