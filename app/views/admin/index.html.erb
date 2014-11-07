@@ -1,30 +1,7 @@
 <div data-page="home">
   <div class="home-top"><h1>Administration</h1></div>
-  <div class="AdminTools">
-
-
-<% if can? :manage, @user %>
-    <p>Create User</p>
-    <%= simple_form_for @user, :as => :user, url: admin_path, method: :post do |f| %>
-
-        <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= f.association :user_type %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Create User" %>
-        </div>
-    <% end %>
-<% end %>
-
-
+    <%= button_to "Add Consultant", new_consultant_path, class: "btn", method: :get%>
     <%= button_to "Add Product", new_product_path, class: "btn", method: :get%>
-
-
     <%= button_to "Add Learning", new_learning_piece_path, class: "btn", method: :get%>
-  </div>
   </div>
 </div>

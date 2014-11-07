@@ -82,15 +82,14 @@ Rails.application.routes.draw do
     delete "signout" => "users/sessions#destroy",     as: :destroy_user_session
     get    "signout" => "users/sessions#destroy",     as: :sign_out
 
-    get    "signup"  => "users/registrations#new",    as: :new_user_registration
-    post   "signup"  => "users/registrations#create", as: :user_registration
+    # Hudson removed signup
     put    "signup"  => "users/registrations#update", as: :update_user_registration
     get    "account" => "users/registrations#edit",   as: :edit_user_registration
   end
 
   get "admin" => "admin#index"
   post "admin" => "admin#create_user"
-  get "consultants/new" => "consultants#create",            as: :new_consultant
+  get "consultants/new" => "consultants#new",            as: :new_consultant
   get "consultants/:id" => "consultants#show",                 as: :consultant
   get "consultants" => "consultants#index",                    as: :consultants
 
