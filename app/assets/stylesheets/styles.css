@@ -139,16 +139,20 @@ p {
 .learning-piece-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .consultants-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
 }
 
 .products-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
 }
 
 .sidescrollable-wrapper {
@@ -174,9 +178,55 @@ p {
 
 
 }
+
+.item-avatar {
+    width: 180px;
+    height: 160px;
+}
+
+.item-avatar img{
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .sidescrollable-item .item-background {
     height: 100%;
     width: 100%;
     padding: 20px;
     background-size: cover;
+
+}
+
+.scroll-btn-right {
+    opacity: 0.0;
+    filter: alpha(opacity=40);
+    z-index: 10;
+    position: absolute;
+    display: block;
+    right: 0px;
+    height: 180px;
+    width: 60px;
+    background-image: url("/assets/scrollBtn.png")
+
+}
+
+.scroll-btn-left {
+    opacity: 0.0;
+    filter: alpha(opacity=40);
+    z-index: 10;
+    position: absolute;
+    left: 0px;
+    height: 180px;
+    width: 60px;
+    background-image: url("/assets/scrollBtnLeft.png")
+
+}
+
+.scroll-btn-right:hover {
+    opacity: 0.6;
+}
+
+.scroll-btn-left:hover {
+    opacity: 0.6;
 }

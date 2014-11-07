@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to :new_user_session, :alert => exception.message
+    if(exception.action == :update)
+      redirect_to :controller => 'profiles', :action => 'edit', :id => current_user.profile.id
+    else
+      redirect_to :new_user_session, :alert => exception.message
+    end
   end
 
 
