@@ -5,22 +5,23 @@ html {
 *,
 *:before,
 *:after {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     margin: 0;
     color: #EEE;
     text-decoration: none;
+    text-shadow: 0px 1px black, 1px 2px rgba(0, 0, 0, 0.4);
 }
 input,
 button,
 select,
+option,
 textarea {
-   font-family: inherit;
-   font-size: inherit;
-   line-height: inherit;
+    color: #333;
+    text-shadow: none;
 }
 div,
 p {
@@ -28,10 +29,10 @@ p {
 }
 /* Background Colors */
 .bg-p {
-    background: #46484A;
+    background: #2E2F30;
 }
 .bg-s {
-    background: #2B2C2F;
+    background: #17191A;
 }
 /* Primary Colors */
 .t-p { /* Text (t) */
@@ -159,8 +160,8 @@ p {
     height: 200px;
     overflow-x: auto;
     overflow-y: hidden;
-    background: #333;
     width: 100%;
+    box-shadow: 0 0 4px black inset;
 }
 
 .sidescrollable-container {
@@ -173,7 +174,7 @@ p {
     width: 180px;
     height: 160px;
     float: left;
-    margin: 10px;
+    margin: 10px 0 10px 10px;
     border: 1px solid #999;
 
 
@@ -195,7 +196,6 @@ p {
     width: 100%;
     padding: 20px;
     background-size: cover;
-
 }
 
 .scroll-btn-right {
@@ -229,4 +229,5 @@ p {
 
 .scroll-btn-left:hover {
     opacity: 0.6;
-}
+}}
+
