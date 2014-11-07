@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="bg-p">
+<head>
+  <title>Design2Teach</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,100,100italic,500italic,500' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+<!-- Prelang: Analytics / Google Analytics -->
+    <%= analytics_init if Rails.env.production? or Rails.env.development? %></head>
+<body>
+<% if (current_user && current_user.is_consultant) %>
+<div id="nav">
+    Signed in as <span class="user-email"><%= current_user.email %></span>
+      (<span class="user-type t-p"><%= current_user.user_type.title %></span>)
+      <%= link_to "View Admin Panel", admin_path, :method => :get, :class => 'nav-btn', id: 'view-admin-panel' %>
+      <%= link_to "Edit Profile", profile_path(current_user.profile), :method => :get, :class => 'nav-btn', id: 'edit-profile' %>
+      <%= link_to "Sign Out", sign_out_path, :method => :get, :class => 't-s hvr', id: 'sign-out' %>
+</div>
+<% end %>
+<div class="page-wrapper" data-type="list">
+<%= yield %>
+</div>
+</body>
+</html>

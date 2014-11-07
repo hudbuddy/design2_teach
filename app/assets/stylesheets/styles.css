@@ -15,6 +15,12 @@ html {
     text-decoration: none;
     text-shadow: 0px 1px black, 1px 2px rgba(0, 0, 0, 0.4);
 }
+.t-d *,
+.t-d *:before,
+.t-d *:after {
+    color: #111;
+    text-shadow: 0px 1px rgba(255, 255, 255, 0.3), 1px 2px rgba(255, 255, 255, 0.1);
+}
 input,
 button,
 select,
@@ -70,7 +76,7 @@ p {
     color: #A9E676;
 }
 .b-a {
-    background: #A9E676;
+    background: #46563A;
 }
 /* Accent Colors (Light) */
 .t-a-l {
@@ -80,7 +86,14 @@ p {
     background: #C3F09E;
 }
 
-
+.page-wrapper[data-type='item'],
+.page-wrapper[data-type='list'] {
+    padding: 20px;
+}
+.page-wrapper[data-type='item'] .sidescrollable-item:first-of-type,
+.page-wrapper[data-type='list'] .sidescrollable-item:first-of-type {
+    margin-left: 0;
+}
 [data-page="home"] h1,
 [data-page="home"] h2 {
     margin-left: 20px;
@@ -119,115 +132,156 @@ p {
 }
 .home-top {
     height: 320px;
+    position: relative;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.7) inset, 0 -2px 3px rgba(0, 0, 0, 0.7) inset;
+}
+.home-top .home-image {
+    height: 100%;
+    width: 100%;
     background-image: url(http://www.socwall.com/images/wallpapers/36432-2048x1356.jpg);
     background-position: center 820px;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 .home-top h1 {
     position: absolute;
-    top: 100px;
-    left: 200px;
+    top: 60px;
+    left: 80px;
+    font-size: 50px;
+}
+.home-top h1,
+.home-top h1 span {
+    text-shadow: 0 0 50px black, 0 0 30px black, 0 0 10px black;
 }
 .home-section {
-    height: 220px;
+    height: 240px;
     overflow: hidden;
 }
 .home-section h2 {
     height: 40px;
     line-height: 40px;
 }
-
 .learning-piece-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
-
 .consultants-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 
 }
-
 .products-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
-
 .sidescrollable-wrapper {
-    height: 200px;
+    height: 220px;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
     box-shadow: 0 0 4px black inset;
+    position: relative;
 }
-
 .sidescrollable-container {
     height: 100%;
-
+    position: relative;
 }
-
 
 .sidescrollable-item {
     width: 180px;
-    height: 160px;
+    height: 180px;
     float: left;
     margin: 10px 0 10px 10px;
-    border: 1px solid #999;
-
-
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
-
-.item-avatar {
-    width: 180px;
-    height: 160px;
+.sidescrollable-item .item-header {
+    display: table;
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.54);
+    z-index: 1;
+    position: relative;
 }
-
-.item-avatar img{
-    max-height: 100%;
-    max-width: 100%;
-    overflow: hidden;
+.sidescrollable-item .item-header .item-link-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    opacity: 0;
 }
-
+.sidescrollable-item .item-header h3 {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 16px;
+    text-align: center;
+}
 .sidescrollable-item .item-background {
-    height: 100%;
+    height: 140px;
     width: 100%;
     padding: 20px;
     background-size: cover;
+    overflow: hidden;
+    position: relative;
+    /* TODO: Take out */
+    background-image: url(http://placecreature.com//1200/800);
 }
-
-.scroll-btn-right {
+.sidescrollable-item .item-background .description-text {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transform:translate3d(0, -100%, 0);
+    -moz-transform:translate3d(0, -100%, 0);
+    -ms-transform:translate3d(0, -100%, 0);
+    -o-transform:translate3d(0, -100%, 0);
+    transform:translate3d(0, -100%, 0);
+    transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+}
+.sidescrollable-item:hover .item-background .description-text {
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    -ms-transform:translate3d(0, 0, 0);
+    -o-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+}
+.sidescrollable-item .item-background .item-link {
+    bottom: 10px;
+    right: 10px;
+    position: absolute;
+    padding: 5px;
+    font-weight: 500;
+}
+.scroll-btn {
     opacity: 0.0;
     filter: alpha(opacity=40);
     z-index: 10;
     position: absolute;
     display: block;
+    height: 100%;
+    width: 60px;
+    top: 0;
+    background-size: 100% 90%;
+}
+.scroll-btn-right {
+    background-image: url("/assets/scrollBtn.png");
     right: 0px;
-    height: 180px;
-    width: 60px;
-    background-image: url("/assets/scrollBtn.png")
-
 }
-
 .scroll-btn-left {
-    opacity: 0.0;
-    filter: alpha(opacity=40);
-    z-index: 10;
-    position: absolute;
+    background-image: url("/assets/scrollBtnLeft.png");
     left: 0px;
-    height: 180px;
-    width: 60px;
-    background-image: url("/assets/scrollBtnLeft.png")
-
 }
-
-.scroll-btn-right:hover {
+.sidescrollable-wrapper:hover .scroll-btn {
     opacity: 0.6;
 }
-
-.scroll-btn-left:hover {
-    opacity: 0.6;
-}}
-

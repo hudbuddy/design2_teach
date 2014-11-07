@@ -1,4 +1,5 @@
 class ConsultantsController < ApplicationController
+  layout :resolve_layout
 
   def index
     @consultants = User.consultants
@@ -23,4 +24,18 @@ class ConsultantsController < ApplicationController
     end
 
   end
+
+  private
+
+  def resolve_layout
+    case action_name
+      when 'new', 'edit'
+        'admin'
+      when 'index'
+        'list'
+      else
+        'item'
+    end
+  end
+
 end

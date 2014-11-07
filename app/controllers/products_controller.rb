@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  layout :resolve_layout
 
   # GET /products
   # GET /products.json
@@ -70,5 +71,16 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :url, :description, :picture_url)
+    end
+
+    def resolve_layout
+      case action_name
+        when 'new', 'edit'
+          'admin'
+        when 'index'
+          'list'
+        else
+          'item'
+      end
     end
 end

@@ -32,7 +32,7 @@ class Ability
     user ||= User.new
     if (user.is_consultant)
       if user.is_admin
-        can [:read, :create, :destroy], :all
+        can [:read, :create, :destroy, :manage], :all
         can [:update], User, :user_id => user.id
         can [:update], Profile, :user_id => user.id
       else

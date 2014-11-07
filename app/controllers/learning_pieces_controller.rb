@@ -1,6 +1,7 @@
 class LearningPiecesController < ApplicationController
   load_and_authorize_resource
   before_action :set_learning_piece, only: [:show, :edit, :update, :destroy]
+  layout :resolve_layout
 
   # GET /learning_pieces
   # GET /learning_pieces.json
@@ -72,5 +73,16 @@ class LearningPiecesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_piece_params
       params.require(:learning_piece).permit(:title, :description_short, :description_long, :youtube_url, :picture, :user_id, :avatar, :topic_ids => [])
+    end
+
+    def resolve_layout
+      case action_name
+        when 'new', 'edit'
+          'admin'
+        when 'index'
+          'list'
+        else
+          'item'
+      end
     end
 end

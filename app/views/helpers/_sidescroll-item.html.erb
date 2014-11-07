@@ -3,25 +3,43 @@
 
 <% if coll_type.eql? "learning_pieces" %>
 
-  <div class="item-avatar"><%= image_tag item.avatar_url.to_s %></div>
-  <div class="item-background" style="background-image: url(<%=  %>)">
+  <div class="item-header b-a">
     <h3 class="learning-piece-item"><%= item.title %></h3>
-    <div><%= item.description_short %></div>
+    <%= link_to("", learning_piece_path(item), { class: "item-link-header" } ) %>
+  </div>
+  <div class="item-background" style="<!-- background-image: url(<%= item.avatar_url.to_s %>) -->">
+    <div class="description-text">
+      <%= item.description_short %>
+      <%= link_to("View", learning_piece_path(item), { class: "item-link t-s-l" } ) %>
+    </div>
+
   </div>
 
 
 <% elsif coll_type.eql? "consultants" %>
 
-  <div class="item-background" style="background-image: url(<%= item.profile_picture %>)">
+  <div class="item-header b-a">
     <h3 class="consultant-item"><%= item.first_name %> <%= item.last_name %></h3>
-    <div><%= item.bio %></div>
+    <%= link_to("", consultant_path(item), { class: "item-link-header" } ) %>
   </div>
+  <div class="item-background" style="<!--background-image: url(<%= item.profile_picture %>) -->">
+    <div class="description-text">
+      <%= item.bio %>
+      <%= link_to("View", consultant_path(item), { class: "item-link t-s-l" } ) %>
+    </div>
+      </div>
 
 <% elsif coll_type.eql? "products" %>
 
-  <div class="item-background" style="background-image: url(<%= item.picture_url %>)">
+  <div class="item-header b-a">
     <h3 class="product-item"><%= item.title %></h3>
-    <div><%= item.description %></div>
+    <a class="item-link-header" href="<%= item.url %>" target="_blank">View</a>
+  </div>
+  <div class="item-background" style="<!--background-image: url(<%= item.picture_url %>) -->">
+    <div class="description-text">
+      <%= item.description %>
+      <a class="item-link t-s-l" href="<%= item.url %>" target="_blank">View</a>
+    </div>
   </div>
 
 <% end %>
