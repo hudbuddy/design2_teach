@@ -1,12 +1,16 @@
 <% if can? :manage, @user %>
-    <p>Create User</p>
+    <h1>Create Consultant</h1>
     <%= simple_form_for @user, :as => :user, url: admin_path, method: :post do |f| %>
 
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
           <%= f.input :password_confirmation, required: true %>
-          <%= f.association :user_type %>
+          <% if current_user.is_superadmin %>
+          <%= f.association :user_type, as: :radio_buttons, :collection => UserType.where("id BETWEEN 2 AND 3"), required: true %>
+          <% elsif current_user.is_admin %>
+          <%= f.association :user_type, as: :radio_buttons, :collection => UserType.where("id = 3"), required: true %>
+          <% end %>
         </div>
 
         <div class="form-actions">
