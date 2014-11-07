@@ -8,13 +8,15 @@
 <!-- Prelang: Analytics / Google Analytics -->
     <%= analytics_init if Rails.env.production? or Rails.env.development? %></head>
 <body>
-<% if (current_user) %>
-<div><span>Signed in as: </span><%= current_user.email %></div>
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<% else %>
-    <div><span>Not signed in</span></div>
-    <%= link_to "Login", new_user_session_path, :method => :get%> or <%= link_to "Sign Up", new_user_registration_path, :method => :get%>
-<% end %>
+<div id="nav">
+  <% if (current_user && current_user.is_consultant) %>
+      Signed in as <span class="user-email"><%= current_user.email %></span>
+      (<span class="user-type t-p"><%= current_user.user_type.title %></span>)
+      <%= link_to "View Admin Panel", admin_path, :method => :get, :class => 'nav-btn', id: 'view-admin-panel' %>
+      <%= link_to "Edit Profile", profile_path(current_user.profile), :method => :get, :class => 'nav-btn', id: 'edit-profile' %>
+      <%= link_to "Sign Out", sign_out_path, :method => :get, :class => 't-s hvr', id: 'sign-out' %>
+  <% end %>
+</div>
 
 <%= yield %>
 

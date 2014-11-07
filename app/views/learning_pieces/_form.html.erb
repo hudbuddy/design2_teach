@@ -1,4 +1,4 @@
-<%= simple_form_for(@learning_piece) do |f| %>
+<%= simple_form_for @learning_piece, html: { multipart: true } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -7,8 +7,9 @@
     <%= f.input :description_long %>
     <%= f.input :youtube_url %>
     <%= f.input :picture %>
+    <%= f.file_field  :avatar, as: :file %>
     <%= f.association :user %>
-    <%= f.association :topic %>
+    <%= f.association :topics, as: :check_boxes%>
   </div>
 
   <div class="form-actions">

@@ -3,6 +3,7 @@
 
 <% if coll_type.eql? "learning_pieces" %>
 
+  <div class="item-avatar"><%= image_tag item.avatar_url.to_s %></div>
   <div class="item-background" style="background-image: url(<%=  %>)">
     <h3 class="learning-piece-item"><%= item.title %></h3>
     <div><%= item.description_short %></div>

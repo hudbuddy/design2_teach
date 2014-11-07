@@ -5,6 +5,7 @@
     <h1>Design2Teach</h1>
   </div>
     <section id="learning-pieces-section" class="home-section">
+
       <h2><%= link_to "Learning Pieces", learning_pieces_path, :method => :get %></h2>
       <div class="learning-piece-wrapper">
         <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces' }  %>

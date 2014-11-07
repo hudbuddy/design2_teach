@@ -19,6 +19,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+
+    authorize! :update, @profile
   end
 
   # POST /profiles

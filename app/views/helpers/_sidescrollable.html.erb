@@ -1,6 +1,9 @@
 <!--Takes a coll_type-->
 <div class="sidescrollable-wrapper">
+    <div class="scroll-btn-left"></div>
+    <div class="scroll-btn-right"></div>
     <div class="sidescrollable-container">
       <%= render partial: "helpers/sidescroll-item", locals: { coll_type: coll_type }, collection: coll, as: :item %>
+
     </div>
 </div>

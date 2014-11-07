@@ -49,3 +49,5 @@ gem 'rails_config'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'cancan', github: 'ryanb/cancan'
+gem 'carrierwave'
+
