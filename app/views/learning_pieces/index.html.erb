@@ -1,2 +1,4 @@
-<h1>Learning Pieces</h1>
-<%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @learning_pieces, as: :item %>
+<h1 class="section-header">Learning Pieces</h1>
+<div class="learning-piece-index">
+    <%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @learning_pieces, as: :item %>
+</div>

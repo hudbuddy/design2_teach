@@ -10,6 +10,9 @@
   <div class="item-background" style="<!-- background-image: url(<%= item.avatar_url.to_s %>) -->">
     <div class="description-text">
       <%= item.description_short %>
+      <% if can? :update, item %>
+          <%= link_to("Edit", edit_learning_piece_path(item), { class: "edit-link t-s-l" } ) %>
+      <% end %>
       <%= link_to("View", learning_piece_path(item), { class: "item-link t-s-l" } ) %>
     </div>
 

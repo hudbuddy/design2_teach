@@ -12,7 +12,27 @@ class LearningPiecesController < ApplicationController
   # GET /learning_pieces/1
   # GET /learning_pieces/1.json
   def show
-  end
+    related_learning_size = 4
+    #about this:
+    # finds all related videos... this is likely not the best way. It would likely be very slow for large pulls
+    # it then shuffles the list so that the videos dont always show up the exact same or prioritize certain topics
+    # after the shuffle it culls the list down to related_learning_size
+    @related_learning = Array.new()
+    @learning_piece.topics.each do |tp|
+      tp.learning_pieces.each do |lp|
+          unless @related_learning.include?(lp)
+            @related_learning << lp;
+          end
+      end
+    end
+    @related_learning = @related_learning.shuffle();
+    until @related_learning.length <= related_learning_size
+      @related_learning.pop
+    end
+
+
+    @modifiedUrl = "http://www.youtube.com/embed/#{ youtube_embed(@learning_piece.youtube_url) }"
+end
 
   # GET /learning_pieces/new
   def new
@@ -60,6 +80,15 @@ class LearningPiecesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to learning_pieces_url, notice: 'Learning piece was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def youtube_embed(youtube_url)
+    if youtube_url[/youtu\.be\/([^\?]*)/]
+      youtube_id = $1
+    else
+      youtube_url[/^.*((v\/)|(embed\/)|(watch\?))\??v?=?([^\&\?]*).*/]
+      youtube_id = $5
     end
   end
 

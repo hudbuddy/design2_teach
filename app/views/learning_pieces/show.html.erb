@@ -1,29 +1,37 @@
+<%= javascript_include_tag "learning_pieces" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @learning_piece.title %>
-</p>
 
-<p>
-  <strong>Description short:</strong>
-  <%= @learning_piece.description_short %>
-</p>
+<div class="learning-main">
 
-<p>
-  <strong>Description long:</strong>
-  <%= @learning_piece.description_long %>
-</p>
 
-<p>
-  <strong>Youtube url:</strong>
-  <%= @learning_piece.youtube_url %>
-</p>
 
-<p>
-  <strong>Deleted at:</strong>
-  <%= @learning_piece.deleted_at %>
-</p>
+    <div class="learning-content bg-s">
+      <h1>
+        <%= @learning_piece.title %>
+      </h1>     ``
+      <h2>
+        <%= @learning_piece.description_short %>
+      </h2>
+        <div class="youtube-container bg-p">
+            <embed class="youtube-embed" width="720" height="480" src=<%=@modifiedUrl %>>
+              <p class="lp-desc-long">
+                <strong>Description long:</strong>
+                <%= @learning_piece.description_long %>
+              </p>
+        </div>
+      <div class="related-pieces bg-p">
+        <h2>Related Learning Pieces</h2>
+        <%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @related_learning, as: :item %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_learning_piece_path(@learning_piece) %> |
+</div>
+
+
+<% if can? :update, @learning_piece %>
+    <%= link_to 'Edit', edit_learning_piece_path(@learning_piece) %> |
+<% end %>
+
 <%= link_to 'Back', learning_pieces_path %>

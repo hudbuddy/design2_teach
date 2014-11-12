@@ -58,3 +58,74 @@
 div input {
   color: black
 }
+
+
+.learning-form-container {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid gray;
+  position: relative;
+}
+
+.learning-form-container h1 {
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.learning-form-container {
+  width: 100%;
+  margin: 10px;
+
+}
+
+.form-inputs .text{
+
+ }
+
+label {
+  text-align: right;
+
+}
+
+
+#learning_piece_title {
+  padding: 4px;
+  width: 400px;
+}
+#learning_piece_description_short{
+  padding: 4px;
+  width: 400px;
+}
+#learning_piece_youtube_url{
+  padding: 4px;
+  width: 600px;
+}
+#learning_piece_avatar{
+  padding: 4px;
+  background: gray;
+  width: 600px;
+}
+#learning_piece_user_id{
+  padding: 4px;
+  width: 200px;
+}
+
+
+#learning_piece_description_long {
+  padding: 4px;
+  margin: 14px;
+  width: 600px;
+  height: 400px;
+}
+
+label.checkbox {
+  text-align: center;
+  width: 150px;
+}
+
+
+#learning_piece_user_id {
+  margin: 14px;
+}
+.learning_piece_topics {
+  width: 800px;
+}

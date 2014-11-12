@@ -196,7 +196,7 @@ p {
     width: 180px;
     height: 180px;
     float: left;
-    margin: 10px 0 10px 10px;
+    margin: 10px 20px 10px 0px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 .sidescrollable-item .item-header {
@@ -247,7 +247,7 @@ p {
     -ms-transform:translate3d(0, -100%, 0);
     -o-transform:translate3d(0, -100%, 0);
     transform:translate3d(0, -100%, 0);
-    transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+    transition: 200ms cubic-bezier(.17,.66,.27,.97) all;
 }
 .sidescrollable-item:hover .item-background .description-text {
     -webkit-transform:translate3d(0, 0, 0);
@@ -256,13 +256,22 @@ p {
     -o-transform:translate3d(0, 0, 0);
     transform:translate3d(0, 0, 0);
 }
-.sidescrollable-item .item-background .item-link {
+
+.sidescrollable-item .item-background .edit-link {
     bottom: 10px;
-    right: 10px;
+    left: 10px;
     position: absolute;
     padding: 5px;
     font-weight: 500;
 }
+
+.sidescrollable-item .item-background .item-link {
+     bottom: 10px;
+     right: 10px;
+     position: absolute;
+     padding: 5px;
+     font-weight: 500;
+ }
 .scroll-btn {
     opacity: 0.0;
     filter: alpha(opacity=40);
@@ -285,3 +294,70 @@ p {
 .sidescrollable-wrapper:hover .scroll-btn {
     opacity: 0.6;
 }
+
+/* ---------------------------- Learning Pieces Pages ------------------------*/
+
+
+.section-header {
+    font-size: 30px;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+}
+
+.learning-piece-index {
+    margin-top: 1px;
+    border-top: 1px solid gray;
+    position: relative;
+    border-bottom: 1px solid black;
+    height: auto;
+    display: block;
+}
+
+.learning-main {
+    width: 100%;
+
+
+}
+
+.learning-content {
+    width: 960px;
+    padding-bottom: 10px;
+    box-sizing: content-box;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.youtube-container {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    margin: 10px 10px 10px 0px;
+    display: inline-block;
+    clear: both;
+}
+
+.youtube-wrapper {
+    width: 720px;
+}
+
+.youtube-container .youtube-embed{
+
+
+}
+
+.related-pieces {
+    vertical-align: top;
+    position: relative;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+    padding-left: 10px;
+    width: 200px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.lp-desc-long {
+    text-align: left;
+    width: 720px;
+    height-min: 400px;
+}
+
+/* learning form css styles can be found in admin.css */

@@ -1,18 +1,22 @@
-<%= simple_form_for(@learning_piece) do |f| %>
-  <%= f.error_notification %>
+<div class="learning-form-main">
+    <div class="learning-form-container bg-s">
+      <h1>Editing "<%= @learning_piece.title %>" </h1>
+        <%= simple_form_for(@learning_piece) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description_short %>
-    <%= f.input :description_long %>
-    <%= f.input :youtube_url %>
-    <%= f.input :picture %>
-    <%= f.file_field  :avatar, as: :file %>
-    <%= f.association :user %>
-    <%= f.association :topics, as: :check_boxes %>
-  </div>
+          <div class="form-inputs learning-form-inputs">
+            <%= f.input :title, :label => "Title:" %>
+            <%= f.input :description_short, :label => "Description short:" %>
+            <%= f.input :description_long, :label => "Description long:" %>
+            <%= f.input :youtube_url, :label => "Youtube URL:"%>
+            <label>Picture:</label></label><%= f.file_field  :avatar, :label => "Picture:", as: :file%>
+            <%= f.association :user, :label => "User:" %>
+            <%= f.association :topics, :label => "Topics:", as: :check_boxes %>
+          </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+    </div>
+</div>
