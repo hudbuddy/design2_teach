@@ -247,7 +247,11 @@ p {
     -ms-transform:translate3d(0, -100%, 0);
     -o-transform:translate3d(0, -100%, 0);
     transform:translate3d(0, -100%, 0);
-    transition: 200ms cubic-bezier(.17,.66,.27,.97) all;
+    -webkit-transition: 600ms ease all;
+    -moz-transition: 600ms ease all;
+    -ms-transition: 600ms ease all;
+    -o-transition: 600ms ease all;
+    transition: 600ms ease all;
 }
 .sidescrollable-item:hover .item-background .description-text {
     -webkit-transform:translate3d(0, 0, 0);
@@ -255,11 +259,15 @@ p {
     -ms-transform:translate3d(0, 0, 0);
     -o-transform:translate3d(0, 0, 0);
     transform:translate3d(0, 0, 0);
+    -webkit-transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+    -moz-transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+    -ms-transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+    -o-transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
+    transition: 300ms cubic-bezier(.17,.66,.27,.97) all;
 }
-
-.sidescrollable-item .item-background .edit-link {
+.sidescrollable-item .item-background .item-link {
     bottom: 10px;
-    left: 10px;
+    right: 10px;
     position: absolute;
     padding: 5px;
     font-weight: 500;
