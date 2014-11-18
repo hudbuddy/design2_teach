@@ -311,7 +311,8 @@ p {
 .scroll-btn-left {
     left: 0px;
 }
-.sidescrollable-wrapper:hover .scroll-btn {
+.sidescrollable-wrapper[data-scrollable-dirs~='right']:hover .scroll-btn-right,
+.sidescrollable-wrapper[data-scrollable-dirs~='left']:hover .scroll-btn-left {
     opacity: 0.8;
 }
 

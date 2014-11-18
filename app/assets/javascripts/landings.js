@@ -32,20 +32,32 @@ function DocumentReady() {
         // Get the scroll container within the wrapper
         var $scrollWrap = $wrapper.find('.sidescrollable-scrollwrap');
         // Scroll the wrapper with paramaters
-        ScrollWrapper($scrollWrap, scrollSpeed, dir);
+        ScrollWrapper($wrapper, $scrollWrap, scrollSpeed, dir);
     }
 
     function offScrollButtonHover() {
         clearInterval(scrollIntID);
     }
 
-    function ScrollWrapper($wrapper, speed, dir) {
+    function ScrollWrapper($wrapper, $scrollWrap, speed, dir) {
         // Get the direction of the arrow as -1 or 1
         dir = dir.toLowerCase() === 'left' ? -1 : 1;
         // Scroll a wrapper
         scrollIntID = setInterval(function () {
-            $wrapper.scrollLeft($wrapper.scrollLeft() + speed * dir);
+            $scrollWrap.scrollLeft($scrollWrap.scrollLeft() + speed * dir);
+            SetScrollDirections($wrapper, $scrollWrap);
         }, scrollInterval);
+    }
+
+    function SetScrollDirections($wrapper, $scrollWrap) {
+        var scrollDirections = [];
+        if ($scrollWrap.scrollLeft() > 0) {
+            scrollDirections.push('left');
+        }
+        if ($scrollWrap.scrollLeft() + $scrollWrap.width() < $scrollWrap.get(0).scrollWidth) {
+            scrollDirections.push('right');
+        }
+        $wrapper.attr('data-scrollable-dirs', scrollDirections.join(' '));
     }
 
     ResizeListContainers();
@@ -54,6 +66,9 @@ function DocumentReady() {
     $(".scroll-btn").hover(onScrollButtonHover, offScrollButtonHover);
 
     $(window).on('resize', ResizeListContainers);
+    $('.sidescrollable-wrapper').each(function () {
+        SetScrollDirections($(this), $(this).find('.sidescrollable-scrollwrap'));
+    });
 }
 
 // Changed to document.ready because that's what people use
