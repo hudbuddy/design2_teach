@@ -1,8 +1,20 @@
 <!--Takes a coll_type-->
 <div class="sidescrollable-wrapper bg-s">
+  <div class="sidescrollable-scrollwrap">
+    <!--
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: -20px;
+      overflow-x: auto;
+
+      Allows sidescrollable-wrapper to be set to any width or height and the scrollwrap will always fill the space with its scrollbar hidden out of sight.
+      Javascript logic will now operate on sidescrollable-scrollwrap instead of the wrapper
+    -->
     <div class="sidescrollable-container">
-      <%= render partial: "helpers/sidescroll-item", locals: { coll_type: coll_type }, collection: coll, as: :item %>
+      <%= render partial: "helpers/sidescroll-item", locals: {coll_type: coll_type}, collection: coll, as: :item %>
     </div>
-  <div class="scroll-btn scroll-btn-left"></div>
-  <div class="scroll-btn scroll-btn-right"></div>
+  </div>
+  <div class="scroll-btn scroll-btn-left" data-dir="left"></div>
+  <div class="scroll-btn scroll-btn-right" data-dir="right"></div>
 </div>

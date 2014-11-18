@@ -185,12 +185,20 @@ p {
     -webkit-overflow-scrolling: touch;
 }
 .sidescrollable-wrapper {
-    height: 220px;
+    height: 200px;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
     box-shadow: 0 0 4px black inset;
     position: relative;
+}
+.sidescrollable-scrollwrap {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -20px;
+    overflow-x: auto;
 }
 .sidescrollable-container {
     height: 100%;
