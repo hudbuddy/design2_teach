@@ -209,7 +209,7 @@ p {
     width: 180px;
     height: 180px;
     float: left;
-    margin: 10px 20px 10px 0px;
+    margin: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 .sidescrollable-item .item-header {
@@ -295,8 +295,9 @@ p {
  }
 .scroll-btn {
     opacity: 0.0;
-    filter: alpha(opacity=40);
     z-index: 10;
+    filter: alpha(opacity=40);
+    background: rgba(255, 255, 255, 0.5);
     position: absolute;
     display: block;
     height: 100%;
@@ -305,15 +306,13 @@ p {
     background-size: 100% 90%;
 }
 .scroll-btn-right {
-    background-image: url("/assets/scrollBtn.png");
     right: 0px;
 }
 .scroll-btn-left {
-    background-image: url("/assets/scrollBtnLeft.png");
     left: 0px;
 }
 .sidescrollable-wrapper:hover .scroll-btn {
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 /* ---------------------------- Learning Pieces Pages ------------------------*/
