@@ -133,7 +133,7 @@ p {
 .home-top {
     height: 300px;
     position: relative;
-    box-shadow: 0 0 200px rgba(0, 0, 0, 0.7) inset, 0 -2px 3px rgba(0, 0, 0, 0.7) inset;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.7) inset, 0 -2px 3px rgba(0, 0, 0, 0.7) inset, 0 0 5px black;
 }
 
 .video {
@@ -161,12 +161,22 @@ p {
     text-shadow: 0 0 50px black, 0 0 30px black, 0 0 10px black;
 }
 .home-section {
-    height: 240px;
     overflow: hidden;
 }
 .home-section h2 {
-    height: 40px;
-    line-height: 40px;
+    position: relative;
+    margin: 0;
+    height: 60px;
+    line-height: 60px;
+}
+.home-section h2 a {
+    margin: 0 auto;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 28px;
 }
 .learning-piece-wrapper {
     overflow-x: auto;
@@ -177,19 +187,25 @@ p {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-
 }
 .products-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
+.consultants-container {
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+}
+.consultants-container > * {
+    float: left;
+}
 .sidescrollable-wrapper {
     height: 200px;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
-    box-shadow: 0 0 4px black inset;
     position: relative;
 }
 .sidescrollable-scrollwrap {
