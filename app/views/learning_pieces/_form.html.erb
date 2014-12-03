@@ -1,3 +1,5 @@
+<%= javascript_include_tag "learning_pieces" %>
+
 <div class="learning-form-main">
     <div class="learning-form-container bg-s">
       <h1>Editing "<%= @learning_piece.title %>" </h1>
@@ -11,12 +13,16 @@
             <%= f.input :youtube_url, :label => "Youtube URL:"%>
             <label>Picture:</label></label><%= f.file_field  :avatar, :label => "Picture:", as: :file%>
             <%= f.association :user, :label => "User:" %>
-            <%= f.association :topics, :label => "Topics:", as: :check_boxes %>
+            <div class="form-topics-container">
+                <div class="add-topic-container">
+                    <input id="new-topic" type="text" name="topicname">
+                    <div class="nav-btn add-topic-btn"><p>Add Topic</p></div>
+                </div>
+                <%= f.association :topics, :label => false, as: :check_boxes %>
+            </div>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit %>
-          </div>
+          <%= f.button :submit, :class => "update-learning-piece-btn" %>
         <% end %>
     </div>
 </div>

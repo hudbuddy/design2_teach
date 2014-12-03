@@ -1,6 +1,10 @@
 <!--Takes a coll_type-->
-<div class="sidescrollable-wrapper bg-s">
-  <div class="sidescrollable-scrollwrap">
+<% if coll_type.eql? "learning_pieces" or coll_type.eql? "products" %>
+  <div class="sidescrollable-wrapper bg-p">
+<% else %>
+    <div class="sidescrollable-wrapper bg-s">
+<% end %>
+    <div class="sidescrollable-scrollwrap">
     <!--
       position: absolute;
       top: 0;

@@ -12,12 +12,14 @@ function DocumentReady() {
 
     function ResizeListContainers() {
 
-        var itemWidth = $(".sidescrollable-item").outerWidth(true);
-        var totalWidth = $(".learning-piece-item").length * itemWidth;
+        var itemWidth = $(".sidescrollable-learning-piece").outerWidth(true);
+        var totalWidth = $(".sidescrollable-learning-piece").length * itemWidth;
         $(".learning-piece-wrapper .sidescrollable-container").width(totalWidth);
-        totalWidth = $(".consultant-item").length * itemWidth;
+        itemWidth = $(".sidescrollable-consultant").outerWidth(true);
+        totalWidth = $(".sidescrollable-consultant").length * itemWidth;
         $(".consultants-wrapper .sidescrollable-container").width(totalWidth);
-        totalWidth = $(".product-item").length * itemWidth;
+        itemWidth = $(".sidescrollable-product").outerWidth(true);
+        totalWidth = $(".sidescrollable-product").length * itemWidth;
         $(".products-wrapper .sidescrollable-container").width(totalWidth);
 
     }

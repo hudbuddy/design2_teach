@@ -1,50 +1,77 @@
 <% item = get_proper_format_for_sidescroll_item(item, coll_type) %>
-<div class="sidescrollable-item">
+
 
 <% if coll_type.eql? "learning_pieces" %>
 
-  <div class="item-header b-a">
-    <h3 class="learning-piece-item"><%= item.title %></h3>
-    <%= link_to("", learning_piece_path(item), { class: "item-link-header" } ) %>
-  </div>
-  <div class="item-background" style="<!-- background-image: url(<%= item.avatar_url.to_s %>) -->">
-    <div class="description-text">
-      <%= item.description_short %>
-      <% if can? :update, item %>
-          <%= link_to("Edit", edit_learning_piece_path(item), { class: "edit-link t-s-l" } ) %>
-      <% end %>
-      <%= link_to("View", learning_piece_path(item), { class: "item-link t-s-l" } ) %>
-    </div>
 
+
+
+  <div class="sidescrollable-learning-piece">
+    <div class="lp-background">
+      <div class="lp-content">
+        <%= link_to learning_piece_path(item) do %>
+            <div class="lp-image"></div>
+        <% end %>
+        <div class="lp-text">
+          <h3 class="lp-title"><%= item.title %></h3>
+          <div class="lp-desc-short">
+            <%= item.description_short %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
 <% elsif coll_type.eql? "consultants" %>
 
-  <div class="item-header b-a">
-    <h3 class="consultant-item"><%= item.first_name %> <%= item.last_name %></h3>
-    <%= link_to("", consultant_path(item), { class: "item-link-header" } ) %>
-  </div>
-  <div class="item-background" style="<!--background-image: url(<%= item.profile_picture %>) -->">
-    <div class="description-text">
-      <%= item.bio %>
-      <%= link_to("View", consultant_path(item), { class: "item-link t-s-l" } ) %>
-    </div>
+    <div class="sidescrollable-consultant">
+      <div class="cs-background">
+        <div class="cs-content">
+          <%= link_to consultant_path(item) do %>
+              <div class="cs-image"></div>
+          <% end %>
+          <div class="cs-text">
+            <h3 class="cs-title"><%= item.first_name %> <%= item.last_name %></h3>
+            <div class="cs-desc-short">
+              <%= item.bio %>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
 <% elsif coll_type.eql? "products" %>
 
+    <div class="sidescrollable-product">
+      <div class="pr-background">
+        <div class="pr-content">
+          <%= link_to product_path(item) do %>
+              <div class="pr-image"></div>
+          <% end %>
+          <div class="pr-text">
+            <h3 class="pr-title"><%= item.title %></h3>
+            <div class="pr-desc-short">
+              <%= item.description %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
   <div class="item-header b-a">
     <h3 class="product-item"><%= item.title %></h3>
     <a class="item-link-header" href="<%= item.url %>" target="_blank">View</a>
   </div>
-  <div class="item-background" style="<!--background-image: url(<%= item.picture_url %>) -->">
+  <div class="item-background" style="<!--background-image: url(<%= item.picture_url %>) ">
     <div class="description-text">
       <%= item.description %>
       <a class="item-link t-s-l" href="<%= item.url %>" target="_blank">View</a>
     </div>
   </div>
+    -->
 
 <% end %>
 
-</div>
+

@@ -28,8 +28,12 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
+        if request.xhr?
+          format.json { render json: @topic}
+        end
+
         format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
+
       else
         format.html { render :new }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
