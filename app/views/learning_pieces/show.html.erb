@@ -3,35 +3,48 @@
 <p id="notice"><%= notice %></p>
 
 
+
 <div class="learning-main">
+  <div class="show-background-img">
+    <%= image_tag @learning_piece.avatar_url %>
+  </div>
 
+    <div class="lp-top-padding"></div>
+    <div class="learning-content ">
+      <div class="lp-content-left bg-p">
+          <h1 class="learning-piece-title">
+            <%= @learning_piece.title %>
+          </h1>
 
-
-    <div class="learning-content bg-s">
-      <h1>
-        <%= @learning_piece.title %>
-      </h1>     ``
-      <h2>
-        <%= @learning_piece.description_short %>
-      </h2>
-        <div class="youtube-container bg-p">
-            <embed class="youtube-embed" width="720" height="480" src=<%=@modifiedUrl %>>
-              <p class="lp-desc-long">
-                <strong>Description long:</strong>
-                <%= @learning_piece.description_long %>
-              </p>
-        </div>
+          <% if !@learning_piece.isarticle %>
+              <div class="youtube-container bg-p">
+                  <embed class="youtube-embed" width="920" height="612" src=<%=@modifiedUrl %>>
+              </div>
+          <% end %>
+          <div class="lp-article">
+            <p class="lp-desc-long">
+              <%= @learning_piece.description_long.html_safe %>
+            </p>
+          </div>
+      </div>
       <div class="related-pieces bg-p">
         <h2>Related Learning Pieces</h2>
-        <%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @related_learning, as: :item %>
+
+        <%= render partial: "helpers/learning_piece_small", collection: @related_learning, as: :item %>
       </div>
+
+      <div class="lp-navlinks">
+        <% if can? :update, @learning_piece %>
+            <%= link_to 'Edit', edit_learning_piece_path(@learning_piece) %> |
+        <% end %>
+
+        <%= link_to 'Back', learning_pieces_path %>
+      </div>
+
     </div>
+
 
 </div>
 
 
-<% if can? :update, @learning_piece %>
-    <%= link_to 'Edit', edit_learning_piece_path(@learning_piece) %> |
-<% end %>
 
-<%= link_to 'Back', learning_pieces_path %>

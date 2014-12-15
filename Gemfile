@@ -51,3 +51,4 @@ gem 'tzinfo-data'
 gem 'cancan', github: 'ryanb/cancan'
 gem 'carrierwave'
 
+

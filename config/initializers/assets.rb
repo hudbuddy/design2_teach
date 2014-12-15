@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( landings.js )
 Rails.application.config.assets.precompile += %w( learning_pieces.js )
+Rails.application.config.assets.precompile += %w( profiles.js )

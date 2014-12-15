@@ -32,10 +32,5 @@
         <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants' }  %>
       </div>
     </section>
-    <section id="products-section" class="home-section">
-      <h2><%= link_to "Products", products_path, :method => :get %></h2>
-      <div class="products-wrapper">
-        <%= render partial: "helpers/sidescrollable", locals: { coll: @products, coll_type: 'products' }  %>
-      </div>
-    </section>
+
 </div>

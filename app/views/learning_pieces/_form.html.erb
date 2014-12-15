@@ -1,17 +1,24 @@
 <%= javascript_include_tag "learning_pieces" %>
 
 <div class="learning-form-main">
-    <div class="learning-form-container bg-s">
+
+
+
+    <div class="learning-form-container bg-p">
       <h1>Editing "<%= @learning_piece.title %>" </h1>
         <%= simple_form_for(@learning_piece) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs learning-form-inputs">
+            <div class="isArticle-container">
+                <%= f.collection_radio_buttons :isarticle, [[true, 'Article'], [false, 'Video']], :first, :last %>
+            </div>
             <%= f.input :title, :label => "Title:" %>
             <%= f.input :description_short, :label => "Description short:" %>
             <%= f.input :description_long, :label => "Description long:" %>
             <%= f.input :youtube_url, :label => "Youtube URL:"%>
-            <label>Picture:</label></label><%= f.file_field  :avatar, :label => "Picture:", as: :file%>
+            <div class="label control-label">Background:</div><%= f.file_field  :avatar, :label => "Background:", as: :file%>
+            <div class="label control-label">Foreground:</div><%= f.file_field  :lpimage, :label => "Foreground:", as: :file%>
             <%= f.association :user, :label => "User:" %>
             <div class="form-topics-container">
                 <div class="add-topic-container">
@@ -20,9 +27,38 @@
                 </div>
                 <%= f.association :topics, :label => false, as: :check_boxes %>
             </div>
+
+            <div class="isVisible-container">
+              <%= f.collection_radio_buttons :visible, [[true, 'Visible'], [false, 'Hideen']], :first, :last %>
+            </div>
+
           </div>
 
           <%= f.button :submit, :class => "update-learning-piece-btn" %>
         <% end %>
+
     </div>
+
+  <div class="learning-form-images-container">
+        <h3> Upload pictures to use. NOTE: Do this first OR submit any changes before adding a picture.</h3>
+        <%= simple_form_for @article_image do |a| %>
+            <%= a.file_field :articleimage, as: :file %>
+            <%= a.input :learning_piece_id, :as => :hidden, input_html: { value: @learning_piece.id }%>
+            <%= a.button :submit, 'Add' %>
+        <% end %>
+
+        <% @learning_piece.article_images.each do |ai| %>
+            <div class="article_image">
+              <%= image_tag(ai.articleimage_url(), height: 220, width: 380, class: "article-image-thumb") %>
+              <p>
+                <%= @imgStrFront %>
+                <%= ai.articleimage_url() %>
+                <%= @imgStrBack %>
+              </p>
+            </div>
+        <% end %>
+
+  </div>
 </div>
+
+

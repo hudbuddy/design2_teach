@@ -1,6 +1,9 @@
 <p>
   <strong>Title:</strong>
   <%= @user.email %>
+  <%= @user.profile.title %>
 </p>
 
+
+<%= link_to 'Edit', controller: "profiles", action: "edit", id: @user.profile.id %>
 <%= link_to 'Back', learning_pieces_path %>

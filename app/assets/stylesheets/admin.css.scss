@@ -22,14 +22,16 @@
   margin: 14px;
 }
 
-.form-inputs label {
+.form-inputs .control-label {
   margin-top: 20px;
   width: 200px;
   float: left;
+  text-align: right;
 }
 
 .form-inputs input{
-  border: 2px solid black ;
+  border: 1px solid black ;
+  background: white;
   color: black;
   margin: 14px;
 
@@ -62,10 +64,13 @@ div input {
 }
 
 
+
+
 .learning-form-container {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   border: 1px solid gray;
   position: relative;
+
 }
 
 .learning-form-container h1 {
@@ -79,14 +84,36 @@ div input {
 
 }
 
-.form-inputs .text{
-
- }
+.learning-form-images-container {
+  padding: 10px 10px 10px 10px;
+  position: absolute;
+  right: 5px;
+  top: 60px;
+  width: 400px;
+  border: 1px solid white;
+}
 
 label {
   text-align: right;
 
 }
+
+#learning_piece_isarticle_true {
+  float: left;
+
+}
+#learning_piece_isarticle_false {
+  display: inline;
+
+}
+
+.collection_radio_buttons {
+  float: none;
+}
+
+
+
+
 
 #form-topics-container {
   margin: auto;
@@ -110,6 +137,13 @@ label {
   background: gray;
   width: 600px;
 }
+
+#learning_piece_lpimage{
+  padding: 4px;
+  background: gray;
+  width: 600px;
+}
+
 #learning_piece_user_id{
   padding: 4px;
   width: 200px;
@@ -119,8 +153,8 @@ label {
 #learning_piece_description_long {
   padding: 4px;
   margin: 14px;
-  width: 600px;
-  height: 300px;
+  width: 760px;
+  height: 600px;
   max-width: 700px;
 }
 
@@ -174,4 +208,23 @@ label.checkbox {
 
 .update-learning-piece-btn {
   margin: 20px 0px 20px 227px;
+}
+
+
+#article_image_articleimage {
+  margin: 5px 0px 5px 0px;
+  width: 360px;
+  padding: 4px;
+  background: gray;
+
+}
+
+.isArticle-container {
+  margin-left: 200px;
+}
+
+.isVisible-container {
+  float: left;
+  margin-top: 20px;
+  margin-left: 200px;
 }

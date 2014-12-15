@@ -8,13 +8,13 @@ var playerMaxSize = 1280;
 //resize youtube player depending on window size
 function ResizePlayer()
 {
-    var newWidth = window.innerWidth * 0.55;
+    var newWidth = window.innerWidth * 0.45;
     var newHeight = newWidth * 0.625;
     if((newWidth >= playerMinSize) && (newWidth <= playerMaxSize)) {
         $(".youtube-embed").width(newWidth);
         $(".youtube-embed").height(newHeight);
 
-        $(".learning-content").width(newWidth + 240);
+        $(".learning-content").width(newWidth + 340);
     }
 }
 
@@ -51,7 +51,7 @@ function AddTopic() {
 
 function WindowReady()
 {
-    ResizePlayer();
+
     $(".learning-main").backgroundColor = 'blue';
 
     $(".add-topic-btn").on("click", AddTopic);
@@ -61,5 +61,5 @@ function WindowReady()
 
 
 // Set the initial player size
-$(window).on('resize', ResizePlayer);
+
 $(window).ready(WindowReady);

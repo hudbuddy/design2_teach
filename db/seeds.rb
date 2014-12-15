@@ -21,50 +21,7 @@ users = User.create([
    { email: 'fakeconsult6@gmail.com' , password: 'aaaaaaaa', user_type_id: 3 },
    { email: 'fakeuser@gmail.com' , password: 'aaaaaaaa', user_type_id: 4 },
 ]);
-learning_pieces = LearningPiece.create([
-    {
-      title: 'Learn About Cats In 10 Minutes',
-      description_short: 'Just a quick 10 minute video about cat things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about cat things'
-    },
-    {
-      title: 'Learn About Dogs In 5 Minutes',
-      description_short: 'Just a quick 5 minute video about dog things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about dog things'
-    },
-    {
-      title: 'Learn About Fish In 7 Minutes',
-      description_short: 'Just a quick 7 minute video about fish things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about fish things'
-    },
-    {
-      title: 'Learn About Giraffes In 8 Minutes',
-      description_short: 'Just a quick 8 minute video about giraffe things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about giraffe things'
-    },
-    {
-      title: 'Learn About Squid In 46 Minutes',
-      description_short: 'Just a quick 46 minute video about squid things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about squid things'
-    },
-    {
-      title: 'Learn About Elephants In 3 Minutes',
-      description_short: 'Just a quick 7 minute video about fish things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about fish things'
-    },
-    {
-      title: 'Learn About Tiger In 2 Minutes',
-      description_short: 'Just a quick 2 minute video about tiger things',
-      youtube_url: '//www.youtube.com/embed/Kdgt1ZHkvnM',
-      description_long: 'This is a longer description about why this video is about tiger things'
-    },
-])
+learning_pieces = LearningPiece.create([])
 users.each do |u|
   u.profile = Profile.create()
 end

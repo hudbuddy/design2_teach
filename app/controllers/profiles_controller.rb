@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @learning_pieces = @profile.user.learning_pieces
   end
 
   # GET /profiles/new
@@ -19,7 +20,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-
     authorize! :update, @profile
   end
 
@@ -71,6 +71,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :first_name, :last_name, :profile_picture, :background_picture, :bio, :personal_site_url, :twitter_url, :linkedin_url, :facebook_url)
+      params.require(:profile).permit(:user_id, :first_name, :last_name, :profile_picture, :background_picture, :bio, :personal_site_url, :twitter_url, :linkedin_url, :facebook_url, :title, :profileimage, :profileback)
     end
 end

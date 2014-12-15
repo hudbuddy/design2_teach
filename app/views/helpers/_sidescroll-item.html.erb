@@ -1,40 +1,47 @@
 <% item = get_proper_format_for_sidescroll_item(item, coll_type) %>
 
 
-<% if coll_type.eql? "learning_pieces" %>
+<% if coll_type.eql? "learning_pieces"  %>
 
 
 
-
-  <div class="sidescrollable-learning-piece">
-    <div class="lp-background">
-      <div class="lp-content">
-        <%= link_to learning_piece_path(item) do %>
-            <div class="lp-image"></div>
-        <% end %>
-        <div class="lp-text">
-          <h3 class="lp-title"><%= item.title %></h3>
-          <div class="lp-desc-short">
-            <%= item.description_short %>
+  <% if item.visible or can? :edit, item %>
+      <div class="sidescrollable-learning-piece">
+        <div class="lp-background">
+          <%= image_tag(item.avatar_url(), height:330, width: 586, class: "lp-back-img") %>
+          <div class="lp-content">
+            <%= link_to learning_piece_path(item) do %>
+                <div class="lp-image">
+                  <%= image_tag(item.lpimage_url(), height:180, width: 270, class: "lp-link-img") %>
+                </div>
+            <% end %>
+            <div class="lp-text">
+              <h3 class="lp-title"><%= item.title %></h3>
+              <div class="lp-desc-short">
+                <%= item.description_short %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+  <% end %>
 
 
 <% elsif coll_type.eql? "consultants" %>
 
     <div class="sidescrollable-consultant">
       <div class="cs-background">
+        <%= image_tag(item.profileback_url(), height:387, width: 650, class: "cs-back-img") %>
         <div class="cs-content">
           <%= link_to consultant_path(item) do %>
-              <div class="cs-image"></div>
+              <div class="cs-image">
+                <%= image_tag(item.profileimage_url(), height:180, width: 270, class: "cs-link-img") %>
+              </div>
           <% end %>
           <div class="cs-text">
             <h3 class="cs-title"><%= item.first_name %> <%= item.last_name %></h3>
             <div class="cs-desc-short">
-              <%= item.bio %>
+              <%= item.title %>
             </div>
           </div>
         </div>

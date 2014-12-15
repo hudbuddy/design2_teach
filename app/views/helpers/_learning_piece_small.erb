@@ -1,0 +1,19 @@
+<% if item.visible or can? :edit, item  %>
+    <div class="learning-piece-small">
+        <div class="lp-content">
+          <%= link_to learning_piece_path(item) do %>
+              <div class="lp-small-image">
+                <%= image_tag(item.lpimage_url(), height:180, width: 270) %>
+                    <div class="lp-small-info">
+                      <h3 class="lp-small-title"><%= item.title %></h3>
+                      <div class="lp-small-desc-short">
+                        <%= item.description_short %>
+                      </div>
+                    </div>
+              </div>
+          <% end %>
+
+        </div>
+
+    </div>
+<% end %>

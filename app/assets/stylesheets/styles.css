@@ -32,7 +32,7 @@ textarea {
 }
 div,
 p {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -102,7 +102,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 .page-wrapper[data-type='item'],
 .page-wrapper[data-type='list'] {
-    padding: 20px;
+    padding: 0px;
 }
 
 [data-page="home"] h1,
@@ -287,15 +287,16 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 .sidescrollable-learning-piece:first-of-type,
 .sidescrollable-learning-piece:first-of-type {
-    margin-left: 100px;
+    margin-left:21px;
 }
+
 
 
 .sidescrollable-learning-piece {
     width: 560px;
     height: 330px;
     margin: 21px;
-    margin-top: 70px;
+    margin-top: 50px;
     float: left;
     display: inline;
 }
@@ -308,15 +309,23 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     position: absolute;
     background-size: cover;
     /* TODO: Take out */
-    background-image: url(http://placecreature.com//1200/800);
+    /*background-image: url(http://placecreature.com//1200/800);*/
 }
 
+.lp-back-img {
+    -webkit-filter: brightness(50%);
+}
+
+
+
+
 .sidescrollable-learning-piece .lp-background .lp-content {
-    background: RGBA(0,0,0,0.6);
+
+    background: rgba(0,0,0,0.8);
     width: 530px;
     height: 210px;
     position: absolute;
-    left: 20px;
+    left: 45px;
     top: 50px;
 }
 
@@ -327,8 +336,24 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     top: 15px;
     bottom: 15px;
     background-size: cover;
-    background-image: url('learningPieceFront.png');
+
+
 }
+
+.lp-link-img {
+    -webkit-filter: brightness(75%);
+    -moz-filter: brightness(75%);
+    -o-filter: brightness(75%);
+    -ms-filter: brightness(75%);
+}
+.lp-link-img:hover {
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    -o-filter: brightness(100%);
+    -ms-filter: brightness(100%);
+}
+
+
 .sidescrollable-learning-piece .lp-background .lp-content .lp-text {
     position: absolute;
     left: 54%;
@@ -341,8 +366,8 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 }
 .sidescrollable-consultant {
-    width: 600px;
-    height: 330px;
+    width: 650px;
+    height: 367px;
     margin: 2px;
     margin-top: 60px;
     float: left;
@@ -351,17 +376,15 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 .sidescrollable-consultant .cs-background {
     display: table;
-    padding: 20px;
-    width: 600px;
-    height: 330px;
+
+    width: 650px;
+    height: 367px;
     position: absolute;
     background-size: cover;
-    /* TODO: Take out */
-    background-image: url('forest.png');
 }
 
 .sidescrollable-consultant .cs-background .cs-content {
-    background: RGBA(0,0,0,0.6);
+    background: RGBA(0,0,0,0.8);
     width: 530px;
     height: 210px;
     position: absolute;
@@ -375,13 +398,19 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     width: 270px;
     top: 15px;
     bottom: 15px;
-    background-size: cover;
-    background-image: url('http://assets.hightimes.com/obama-reschedule-marijuana.jpg');
 }
 .sidescrollable-consultant .cs-background .cs-content .cs-text {
     position: absolute;
     left: 55%;
     margin: 15px 10px 10px 10px;
+    overflow: hidden;
+}
+.cs-title {
+    margin-bottom: 10px;
+}
+
+.cs-desc-short {
+    max-height: 150px;
 }
 
 
@@ -554,6 +583,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     font-weight: 400;
     border-bottom: 1px solid black;
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .learning-piece-index {
@@ -570,45 +600,370 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 
 }
+.show-background-img {
+    position: absolute;
+    z-index: -10;
+    width: 0px;
+    height: 0px;
+}
+
+.show-background-img .img {
+
+
+}
+
+.lp-top-padding {
+    height: 200px;
+}
 
 .learning-content {
-    width: 960px;
+    width: 100%;
+    position: relative;
     padding-bottom: 10px;
     box-sizing: content-box;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
     text-align: center;
+
+
+}
+.learning-content-left:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.lp-content-left {
+
+    text-align: left;
+    padding: 0 20px 0 20px;
+    margin-top: 10px;
+    width: 960px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), -2px -2px 2px rgba(0, 0, 0, 0.4);
+    display:inline-block;
+
+
+}
+
+.related-pieces {
+
+    position: relative;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), -2px -2px 2px rgba(0, 0, 0, 0.4);
+    padding: 10px 10px 10px 10px;
+    width: 960px;
+    margin-top: 10px;
+    display:inline-block;
+
+}
+
+
+
+
+img .lp-article-img {
+    max-width: 860;
+
+}
+
+
+.learning-piece-title {
+    padding: 10px 0px 5px 0px;
+    font-size: 32px;
+    font-weight: 400;
+    max-width: 920px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.learning-piece-desc-short {
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 860px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
 }
 
 .youtube-container {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
-    margin: 10px 10px 10px 0px;
-    display: inline-block;
-    clear: both;
+
+    margin: 10px auto 10px auto;
+    display: block;
+    position: relative;
 }
 
-.youtube-wrapper {
-    width: 720px;
-}
+
 
 .youtube-container .youtube-embed{
 
 
 }
 
-.related-pieces {
-    vertical-align: top;
-    position: relative;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
-    padding-left: 10px;
-    width: 200px;
-    display: inline-block;
-    margin-top: 10px;
-}
+
 
 .lp-desc-long {
     text-align: left;
-    width: 720px;
+    max-width: 830px;
     height-min: 400px;
+    padding-bottom: 15px;
+}
+
+.learning-piece-small {
+    width: 270px;
+    height: 180px;
+    padding-top: 3px;
+    margin: 10px 20px 10px 20px;
+    display: inline-block;
+
+}
+
+.lp-small-image {
+    position: relative;
+    width: 100%;
+    -webkit-filter: brightness(75%);
+    -moz-filter: brightness(75%);
+    -o-filter: brightness(75%);
+    -ms-filter: brightness(75%);
+
+}
+
+.lp-small-image:hover {
+    -webkit-filter: brightness(100%);
+    -moz-filter: brightness(100%);
+    -o-filter: brightness(100%);
+    -ms-filter: brightness(100%);
+}
+
+.lp-small-info {
+    top: 10px;
+    position: absolute;
+    left: 10px;
+    text-align: left;
+    max-width: 240px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2px 10px 2px 5px;
+}
+
+.lp-small-title {
+    padding-bottom: 5px;
+
+
+
+
+}
+.lp-small-desc-short {
+
+}
+
+.article-image {
+    display: block;
+    max-width: 760px;
+    margin: 10px auto 10px auto;
+}
+
+.lp-navlinks {
+    margin: 10px 20px 10px 25px;
+    width: 960px;
+
 }
 
 /* learning form css styles can be found in admin.css */
+
+
+/* --------------------------------------- PROFILE LAYOUTS ------------------------------------------- */
+.profile-background-img {
+    position: absolute;
+    width: 1920px;
+    z-index: -10;
+}
+
+.profile-top {
+    height: 80px;
+}
+
+.profile-content {
+    position: relative;
+    padding: 15px 15px 15px 15px;
+    left: 10%;
+    width: 1450px;
+
+}
+
+.profile-content-left {
+    padding: 1px 1px 1px 1px;
+    width: 960px;
+    display: inline-block;
+
+}
+
+.profile-picture-container {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), -2px -2px 2px rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+    width: 960px;
+    overflow: hidden;
+    height: 540px;
+}
+
+.profile-content-right {
+    width: 400px;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    min-height: 540px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profile-text {
+    margin: 10px 15px 10px 15px;
+}
+
+.profile-name {
+    font-size: 50px;
+    text-align: center;
+}
+
+.profile-title {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.profile-bio {
+    padding: 30px 5px 30px 5px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid gray;
+    min-height: 300px;
+}
+
+.link-icons {
+    border-top: 1px solid black;
+    padding: 10px 0px 10px 0px;
+
+}
+
+.social-link-cover {
+    opacity: .8;
+    background-color: black;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+.social-link-cover:hover {
+    opacity: 1;
+
+}
+
+.fb-link {
+    width: 64px;
+    height: 64px;
+    background-image: url("facebook-icon.png");
+    background-size: contain;
+}
+
+
+
+.twitter-link {
+    width: 64px;
+    height: 64px;
+    background-image: url("twitterIcon.png");
+    background-size: contain;
+}
+
+
+.linkedin-link {
+    width: 64px;
+    height: 64px;
+    background-image: url("linkedinIcon.png");
+    background-size: contain;
+}
+
+.profile-learning-pieces {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4), -2px -2px 2px rgba(0, 0, 0, 0.4);
+    margin: 30px 0px 0px 0px;
+    padding: 10px 10px 20px 10px;
+    width: 960px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/*************************************** PROFILE EDITING CSS ***********************************/
+.profile-content-right .control-label {
+    margin: 10px 5px 15px 5px;
+}
+
+#profile_first_name {
+    margin: 3px 0px 5px 0px;
+}
+
+#profile_title {
+    width: 360px;
+}
+#profile_bio {
+    width: 360px;
+    max-width: 360px;
+    height: 450px;
+}
+
+#profile_bio{
+    width: 360px;
+    max-width: 360px;
+    height: 450px;
+}
+
+.profile-form-icon {
+    display: inline;
+}
+
+.link-icons-form {
+    text-align: center;
+}
+
+#profile_facebook_url {
+    width: 360px;
+    margin-bottom: 10px;
+}
+
+#profile_twitter_url {
+    width: 360px;
+    margin-bottom: 10px;
+}
+
+#profile_linkedin_url {
+    width: 360px;
+    margin-bottom: 10px;
+}
+
+.profile-form-uploads-container {
+    width: 960px;
+    height: 80px;
+    margin-top: 15px;
+
+}
+
+.profile-form-uploads {
+    position: relative;
+    padding: 15px 15px 15px 15px;
+}
+
+.profile-form-background-container {
+    float: left;
+    width: 400px;
+
+}
+
+.profile-form-image-container {
+    float: right;
+    width: 400px;
+
+}
+
+#profile_profileimage {
+    width: 400px;
+    border: 1px solid gray;
+    background: white;
+}
+
+#profile_profileback {
+    width: 400px;
+    border: 1px solid gray;
+    background: white;
+}

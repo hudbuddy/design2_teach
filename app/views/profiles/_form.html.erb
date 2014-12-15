@@ -1,20 +1,78 @@
+<%= javascript_include_tag "learning_pieces" %>
+
 <%= simple_form_for(@profile) do |f| %>
+<div class="profile-main">
+
+  <div class="profile-background-img">
+    <%= image_tag @profile.profileback %>
+  </div>
+  <div class="profile-top"></div>
+
+  <div class="profile-content">
+    <div class="profile-content-left">
+      <div class="profile-picture-container">
+        <%= image_tag @profile.profileimage %>
+      </div>
+      <div class="profile-form-uploads-container bg-p">
+          <div class="profile-form-uploads">
+            <div class="profile-form-background-container">
+                <p> Profile Image</p>
+                <%= f.file_field :profileimage, as: :file %>
+            </div>
+            <div class="profile-form-image-container">
+                <p> Background Image</p>
+                <%= f.file_field :profileback, as: :file %>
+            </div>
+          </div>
+      </div>
+
+    </div>
+    <div class="profile-content-right bg-p">
+      <div class="profile-text">
+        <h1 class="profile-name">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+        </h1>
+        <h2 class="profile-title">
+          <%= f.input :title %>
+        </h2>
+
+        <h4 class="profile-bio">
+          <%= f.input :bio %>
+        </h4>
+
+        <% if @profile.facebook_url != "" and @profile.twitter_url != "" and @profile.linkedin_url != "" %>
+            <div class="link-icons">
+              <div class="social-link-cover profile-form-icon">
+                <div class="fb-link"></div>
+                <%= f.input :facebook_url %>
+              </div>
+
+              <div class="social-link-cover profile-form-icon">
+                <div class="twitter-link"></div>
+                <%= f.input :twitter_url %>
+              </div>
+
+
+              <div class="social-link-cover profile-form-icon">
+                <div class="linkedin-link"></div>
+                <%= f.input :linkedin_url %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :profile_picture %>
-    <%= f.input :background_picture %>
-    <%= f.input :bio %>
-    <%= f.input :personal_site_url %>
-    <%= f.input :twitter_url %>
-    <%= f.input :linkedin_url %>
-    <%= f.input :facebook_url %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+
 <% end %>

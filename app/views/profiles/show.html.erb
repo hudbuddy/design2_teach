@@ -1,59 +1,74 @@
+<%= javascript_include_tag "learning_pieces" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user %>
-</p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @profile.first_name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @profile.last_name %>
-</p>
+<div class="profile-main">
 
-<p>
-  <strong>Profile picture:</strong>
-  <%= @profile.profile_picture %>
-</p>
+  <div class="profile-background-img">
+    <%= image_tag @profile.profileback %>
+  </div>
+  <div class="profile-top"></div>
 
-<p>
-  <strong>Background picture:</strong>
-  <%= @profile.background_picture %>
-</p>
+  <div class="profile-content">
+      <div class="profile-content-left">
+        <div class="profile-picture-container">
+          <%= image_tag(@profile.profileimage_url, height:540, width: 960) %>
+        </div>
+        <div class="profile-learning-pieces bg-p">
+          <h2>Learning pieces by <%= @profile.first_name %></h2>
+          <%= render partial: "helpers/learning_piece_small", collection: @learning_pieces, as: :item %>
+        </div>
+      </div>
+      <div class="profile-content-right bg-p">
+        <div class="profile-text">
+          <h1 class="profile-name">
+            <%= @profile.first_name %>
+            <%= @profile.last_name %>
+          </h1>
+          <h2 class="profile-title">
+            <%= @profile.title %>
+          </h2>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
+          <p class="profile-bio">
+                <%=@profile.bio.gsub(/\n/, '<br>').html_safe %>
+          <p>
 
-<p>
-  <strong>Personal site url:</strong>
-  <%= @profile.personal_site_url %>
-</p>
+          <% if @profile.facebook_url != "" and @profile.twitter_url != "" and @profile.linkedin_url != "" %>
+              <div class="link-icons">
+                <% if @profile.facebook_url != "" %>
+                    <%= link_to @profile.facebook_url do %>
+                    <div class="social-link-cover">
+                        <div class="fb-link"></div>
+                    </div>
+                    <% end %>
+                <% end %>
+                <% if @profile.twitter_url != "" %>
+                    <%= link_to @profile.twitter_url do %>
+                        <div class="social-link-cover">
+                            <div class="twitter-link"></div>
+                        </div>
+                    <% end %>
+                <% end %>
+                <% if @profile.linkedin_url != "" %>
+                    <%= link_to @profile.linkedin_url do %>
+                        <div class="social-link-cover">
+                            <div class="linkedin-link"></div>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+          <% end %>
 
-<p>
-  <strong>Twitter url:</strong>
-  <%= @profile.twitter_url %>
-</p>
+          <% if can? :update, @profile %>
+              <%= link_to 'Edit', edit_profile_path(@profile) %>
+          <% end %>
+      </div>
+  </div>
+</div>
 
-<p>
-  <strong>Linkedin url:</strong>
-  <%= @profile.linkedin_url %>
-</p>
 
-<p>
-  <strong>Facebook url:</strong>
-  <%= @profile.facebook_url %>
-</p>
 
-<p>
-  <strong>Deleted at:</strong>
-  <%= @profile.deleted_at %>
-</p>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

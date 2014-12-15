@@ -37,10 +37,14 @@ end
   # GET /learning_pieces/new
   def new
     @learning_piece = LearningPiece.new
+    @article_image = ArticleImage.new
   end
 
   # GET /learning_pieces/1/edit
   def edit
+    @article_image = ArticleImage.new
+    @imgStrFront = "<img class=\"article-image\" src=\""
+    @imgStrBack = "\">"
   end
 
   # POST /learning_pieces
@@ -50,6 +54,11 @@ end
 
     respond_to do |format|
       if @learning_piece.save
+        #if params[:article_images_attributes] != nil
+        #  params[:article_images_attributes].each do |a|
+        #    @article_image = @learning_piece.article_images.create!(:articleimage => a)
+        #  end
+        #end
         format.html { redirect_to @learning_piece, notice: 'Learning piece was successfully created.' }
         format.json { render :show, status: :created, location: @learning_piece }
       else
@@ -62,6 +71,7 @@ end
   # PATCH/PUT /learning_pieces/1
   # PATCH/PUT /learning_pieces/1.json
   def update
+    @article_image = ArticleImage.new
     respond_to do |format|
       if @learning_piece.update(learning_piece_params)
         format.html { redirect_to @learning_piece, notice: 'Learning piece was successfully updated.' }
@@ -101,8 +111,9 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_piece_params
-      params.require(:learning_piece).permit(:title, :description_short, :description_long, :youtube_url, :picture, :user_id, :avatar, :topic_ids => [])
+      params.require(:learning_piece).permit(:isarticle, :visible, :title, :description_short, :description_long, :youtube_url, :picture, :user_id, :avatar, :lpimage, article_images_attributes: [:id, :articleimage], :topic_ids => [])
     end
+
 
     def resolve_layout
       case action_name
