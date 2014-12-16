@@ -32,7 +32,9 @@
           </h2>
 
           <p class="profile-bio">
-                <%=@profile.bio.gsub(/\n/, '<br>').html_safe %>
+                <% if @profile.bio != nil %>
+                    <%=@profile.bio.gsub(/\n/, '<br>').html_safe %>
+                <% end %>
           <p>
 
           <% if @profile.facebook_url != "" and @profile.twitter_url != "" and @profile.linkedin_url != "" %>
