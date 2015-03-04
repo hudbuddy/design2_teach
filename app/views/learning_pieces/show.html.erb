@@ -5,26 +5,56 @@
 
 
 <div class="learning-main">
-  <div class="show-background-img">
-    <%= image_tag @learning_piece.avatar_url %>
+  <div class="learning-top">
+    <div class="home-top">
+      <%= link_to(root_path) do %>
+          <div class="logo"></div>
+      <% end %>
+      <div class="arrow-container">
+        <div class="arrow"></div>
+      </div>
+      <%= link_to "Learning Pieces", learning_pieces_path, :class=> "path-button", :method => :get %>
+      <div class="arrow-container2">
+        <div class="arrow"></div>
+      </div>
+      <%= link_to @learning_piece.title, learning_piece_path(@learning_piece), :class=> "title-button path-button", :method => :get %>
+      <div class="clouds-back"></div>
+      <div class="clouds-front"></div>
+    </div>
   </div>
+
 
     <div class="lp-top-padding"></div>
     <div class="learning-content ">
+
       <div class="lp-content-left bg-p">
-          <h1 class="learning-piece-title">
-            <%= @learning_piece.title %>
-          </h1>
+        <div class="lp-content-header">
+          <%= image_tag @learning_piece.avatar_url, height:562, width: 1000, class: "lp-content-header-image"  %>
+        </div>
+
+
+        <div class="lp-content-headerspace"></div>
+        <h1 class="learning-piece-title">
+          <%= @learning_piece.title %>
+        </h1>
+        <% if @learning_piece.user != nil %>
+            <div class="learning-piece-author">Created by:
+              <%= link_to consultant_path(@learning_piece.user.profile) do %>
+                <%= @learning_piece.user.profile.first_name %> <%= @learning_piece.user.profile.last_name %>
+              <% end %>
+
+            </div>
+        <% end %>
 
           <% if !@learning_piece.isarticle %>
               <div class="youtube-container bg-p">
-                  <embed class="youtube-embed" width="920" height="612" src=<%=@modifiedUrl %>>
+                  <embed class="youtube-embed" width="880" height="586" src=<%=@modifiedUrl %>>
               </div>
           <% end %>
           <div class="lp-article">
-            <p class="lp-desc-long">
+            <div class="lp-desc-long">
               <%= @learning_piece.description_long.html_safe %>
-            </p>
+            </div>
           </div>
       </div>
       <div class="related-pieces bg-p">
@@ -43,7 +73,7 @@
 
     </div>
 
-
+    <div class="learning-bottom"></div>
 </div>
 
 

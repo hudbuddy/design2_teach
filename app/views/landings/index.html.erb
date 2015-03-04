@@ -2,35 +2,59 @@
 
 <div data-page="home">
   <div class="home-top">
-         <div class="home-top">
-           <div class="home-border">
-           </video>
-           </div>
+        <%= link_to(root_path) do %>
+             <div class="logo"></div>
+        <% end %>
+
+        <div class="logo-info">Information & resources for improving teaching & learning for new environments.</div>
+         <div class="clouds-back"></div>
+         <div class="clouds-front"></div>
+           <!--
            <div class="nav-bar">
                 <ul>
                   <li>Learn</li>
                   <li>Consult</li>
                   <li>About Us</li>
-                  <li>More Info</li>
                 </ul>
            </div>
+            -->
 
-        </div>
-    <h1>Design<span class="t-a">2</span>Teach</h1>
+
+
   </div>
     <section id="learning-pieces-section" class="home-section">
-
-
       <div class="learning-piece-wrapper">
-        <h2><%= link_to "Learning Pieces", learning_pieces_path, :class=> "bg-p", :method => :get %></h2>
-        <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces' }  %>
+        <h2>
+          <%= link_to "Learning Pieces", learning_pieces_path, :class=> "lp-head bg-p t-p", :method => :get %>
+        </h2>
+        <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces', topic: '' }  %>
       </div>
     </section>
+
+    <section id="d2l-framework" class="home-section">
+      <div class="d2l-framework-main">
+        <div class="d2l-content-frame">
+            <div class="d2l-framework-logo"></div>
+            <div class="d2l-framework-info">
+                <p><strong>Design 2 Teach</strong> is a framework for creating educational spaces conducive to teaching & learning in the digital world.</p>
+            </div>
+            <h2>
+              <%= link_to "Learn More", learning_pieces_path, :class=> "d2l-framework-head bg-p t-p", :method => :get %>
+            </h2>
+        </div>
+      </div>
+    </section>
+
     <section id="consultant-section" class="home-section">
-      <h2><%= link_to "Consultants", consultants_path, :class=> "bg-s t-p", :method => :get %></h2>
       <div class="consultants-wrapper">
-        <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants' }  %>
+          <h2>
+            <%= link_to "Consultants", consultants_path, :class=> "consultant-head bg-s t-p", :method => :get %>
+          </h2>
+
+          <%= render partial: "helpers/sidescrollable", locals: { coll: @consultants, coll_type: 'consultants', topic: '' }  %>
       </div>
     </section>
+
 
 </div>
+

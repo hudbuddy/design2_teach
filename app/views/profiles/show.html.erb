@@ -6,22 +6,34 @@
 
 <div class="profile-main">
 
-  <div class="profile-background-img">
-    <%= image_tag @profile.profileback %>
+  <div class="home-top">
+    <%= link_to(root_path) do %>
+        <div class="logo"></div>
+    <% end %>
+    <div class="arrow-container">
+      <div class="arrow"></div>
+    </div>
+    <%= link_to "Consultants", consultants_path, :class=> "path-button", :method => :get %>
+    <div class="arrow-container2">
+      <div class="arrow"></div>
+    </div>
+    <%= link_to @profile.first_name + " " + @profile.last_name, consultant_path(@profile), :class=> "title-button path-button", :method => :get %>
+    <div class="clouds-back"></div>
+    <div class="clouds-front"></div>
   </div>
-  <div class="profile-top"></div>
+
 
   <div class="profile-content">
       <div class="profile-content-left">
         <div class="profile-picture-container">
           <%= image_tag(@profile.profileimage_url, height:540, width: 960) %>
         </div>
-        <div class="profile-learning-pieces bg-p">
+        <div class="profile-learning-pieces">
           <h2>Learning pieces by <%= @profile.first_name %></h2>
           <%= render partial: "helpers/learning_piece_small", collection: @learning_pieces, as: :item %>
         </div>
       </div>
-      <div class="profile-content-right bg-p">
+      <div class="profile-content-right">
         <div class="profile-text">
           <h1 class="profile-name">
             <%= @profile.first_name %>
@@ -37,7 +49,7 @@
                 <% end %>
           <p>
 
-          <% if @profile.facebook_url != "" and @profile.twitter_url != "" and @profile.linkedin_url != "" %>
+          <% if @profile.facebook_url != "" or @profile.twitter_url != "" or @profile.linkedin_url != "" %>
               <div class="link-icons">
                 <% if @profile.facebook_url != "" %>
                     <%= link_to @profile.facebook_url do %>
@@ -68,9 +80,8 @@
           <% end %>
       </div>
   </div>
+
 </div>
 
+  <div class="learning-bottom"></div>
 
-
-
-<%= link_to 'Back', profiles_path %>

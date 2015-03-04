@@ -1,2 +1,20 @@
-<h1>Consultants</h1>
-<%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'consultants' }, collection: @consultants, as: :item %>
+<div class="home-top">
+  <%= link_to(root_path) do %>
+      <div class="logo"></div>
+  <% end %>
+
+  <div class="arrow-container">
+    <div class="arrow"></div>
+  </div>
+  <%= link_to "Consultants", consultants_path, :class=> "path-button", :method => :get %>
+  <div class="clouds-back"></div>
+  <div class="clouds-front"></div>
+</div>
+
+<div class="consultants-index-main">
+  <div class="consultants-content">
+    <%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'consultants' }, collection: @consultants, as: :item %>
+  </div>
+</div>
+
+<div class="learning-bottom"></div>

@@ -4,7 +4,7 @@
 
 
 
-    <div class="learning-form-container bg-p">
+    <div class="learning-form-container">
       <h1>Editing "<%= @learning_piece.title %>" </h1>
         <%= simple_form_for(@learning_piece) do |f| %>
           <%= f.error_notification %>
@@ -18,18 +18,22 @@
             <%= f.input :description_long, :label => "Description long:" %>
             <%= f.input :youtube_url, :label => "Youtube URL:"%>
             <div class="label control-label">Background:</div><%= f.file_field  :avatar, :label => "Background:", as: :file%>
-            <div class="label control-label">Foreground:</div><%= f.file_field  :lpimage, :label => "Foreground:", as: :file%>
+            <!--<div class="label control-label">Foreground:</div><%= f.file_field  :lpimage, :label => "Foreground:", as: :file%>-->
             <%= f.association :user, :label => "User:" %>
+            <%= f.association :topic, :label => "Topic:" %>
+
+            <!--
             <div class="form-topics-container">
                 <div class="add-topic-container">
                     <input id="new-topic" type="text" name="topicname">
                     <div class="nav-btn add-topic-btn"><p>Add Topic</p></div>
                 </div>
-                <%= f.association :topics, :label => false, as: :check_boxes %>
+
             </div>
+            -->
 
             <div class="isVisible-container">
-              <%= f.collection_radio_buttons :visible, [[true, 'Visible'], [false, 'Hideen']], :first, :last %>
+              <%= f.collection_radio_buttons :visible, [[true, 'Visible'], [false, 'Hidden']], :first, :last %>
             </div>
 
           </div>
@@ -58,6 +62,24 @@
             </div>
         <% end %>
 
+  </div>
+
+  <div class="learning-form-help">
+    <h2>Helpful HTML tags:</h2>
+    <br>
+    <p> &lt;h1&gt; - Large Title</p>
+    <br>
+    <p> &lt;h2&gt; - Less large Title</p>
+    <br>
+    <p> &lt;I&gt; - Italics</p>
+    <br>
+    <p> &lt;B&gt; - Bold</p>
+    <br>
+    <p> &lt;small&gt; - Useful for the text under an image that explains the image</p>
+    <br>
+    <p> &lt;br&gt; - Use this to add white space. You don't need a closing set, just one adds a newline.</p>
+    <br>
+    <p> &lt;a href="http://www.google.com"&gt; Google &lt;/a&gt;<br>DO NOT FORGET the http://</p>
   </div>
 </div>
 

@@ -3,14 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .admin-wrapper {
-  width: 1000px;
-  margin: 20px auto;
+  width: 100%;
+  margin: 0px 0px;
+  min-width: 1600px;
+
 }
 .AdminTools {
   margin-left: auto;
   margin-right: auto;
   width: 800px;
   position: relative;
+}
+
+.addlearning {
+  position: relative;
+  margin-top: 20px;
 }
 
 .new_user {
@@ -39,7 +46,7 @@
 }
 
 .form-inputs input:focus {
-  border: 2px solid darkgray;
+  border: 1px solid darkgray;
 
 }
 
@@ -64,38 +71,72 @@ div input {
 }
 
 
-
+.learning-form-main {
+  float: left;
+  left: 5px;
+  margin: 10px;
+}
 
 .learning-form-container {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   border: 1px solid gray;
   position: relative;
+  width: 1000px;
+  float:left;
+
+  border-radius: 10px 10px 10px 10px;
 
 }
 
 .learning-form-container h1 {
   text-align: center;
-  border-bottom: 1px solid white;
-}
 
-.learning-form-container {
-  width: 100%;
-  margin: 10px;
+  padding-left: 30px;
+  border-radius: 10px 10px 0px 0px;
 
 }
+
+
 
 .learning-form-images-container {
   padding: 10px 10px 10px 10px;
-  position: absolute;
-  right: 5px;
-  top: 60px;
+  position: relative;
+  float: left;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid gray;
   width: 400px;
-  border: 1px solid white;
+  margin-left: 10px;
+
+}
+
+.learning-form-help{
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  float: left;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid gray;
+  width: 400px;
+  margin-left: 10px;
+  color: black;
+
+}
+
+.learning-form-help p {
+  color: black;
+
+}
+
+.lp-edit-bottom {
+  clear: both;
+  padding: 20px 5px 0px 5px;
 }
 
 label {
   text-align: right;
 
+  color: black;
 }
 
 #learning_piece_isarticle_true {
@@ -126,7 +167,7 @@ label {
 }
 #learning_piece_description_short{
   padding: 4px;
-  width: 400px;
+  width: 700px;
 }
 #learning_piece_youtube_url{
   padding: 4px;
@@ -170,6 +211,11 @@ label.checkbox {
   margin: 14px;
 }
 
+#learning_piece_topic_id {
+  margin: 14px;
+  width: 200px;
+  height: 28px;
+}
 
 .form-topics-container {
   position: relative;

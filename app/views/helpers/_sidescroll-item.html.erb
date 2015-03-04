@@ -6,24 +6,69 @@
 
 
   <% if item.visible or can? :edit, item %>
+      <% if topic.eql? "" or item.topic == nil or topic.eql? item.topic.title %>
       <div class="sidescrollable-learning-piece">
         <div class="lp-background">
-          <%= image_tag(item.avatar_url(), height:330, width: 586, class: "lp-back-img") %>
-          <div class="lp-content">
-            <%= link_to learning_piece_path(item) do %>
-                <div class="lp-image">
-                  <%= image_tag(item.lpimage_url(), height:180, width: 270, class: "lp-link-img") %>
+
+          <%= image_tag(item.avatar_url(), height:243, width: 420, class: "lp-back-img") %>
+
+          <%= link_to learning_piece_path(item) do %>
+              <div class="lp-content">
+                  <h3 class="lp-title"><%= item.title %></h3>
+
+                  <div class="lp-desc-short">
+                    <%= item.description_short %>
+                  </div>
+
+                <!--
+                <%= link_to learning_piece_path(item) do %>
+                    <div class="lp-image">
+                      <%= image_tag(item.lpimage_url(), height:180, width: 270, class: "lp-link-img") %>
+                    </div>
+                <% end %>
+
+                <div class="lp-text">
+                  <h3 class="lp-title"><%= item.title %></h3>
+                  <div class="lp-desc-short">
+                    <%= item.description_short %>
+                  </div>
                 </div>
-            <% end %>
-            <div class="lp-text">
-              <h3 class="lp-title"><%= item.title %></h3>
-              <div class="lp-desc-short">
-                <%= item.description_short %>
+
+                <h3 class="lp-title"><%= item.title %></h3>
+                <div class="lp-desc-short">
+                  <%= item.description_short %>
+                </div>
+                -->
+                <% if item.topic != nil %>
+                    <div class="lp-topic">
+                      <% if item.topic.id == 1 %>
+                        <div class="topic1">
+                          <%= item.topic.title %>
+                        </div>
+                      <% end %>
+
+                      <% if item.topic.id == 2 %>
+                          <div class="topic2">
+                            <%= item.topic.title %>
+                          </div>
+                      <% end %>
+
+                      <% if item.topic.id == 3 %>
+                          <div class="topic3">
+                            <%= item.topic.title %>
+                          </div>
+                      <% end %>
+                    </div>
+                <% end %>
+
+
+
               </div>
-            </div>
-          </div>
+          <% end %>
+
         </div>
       </div>
+        <% end %>
   <% end %>
 
 
@@ -31,11 +76,10 @@
 
     <div class="sidescrollable-consultant">
       <div class="cs-background">
-        <%= image_tag(item.profileback_url(), height:387, width: 650, class: "cs-back-img") %>
         <div class="cs-content">
           <%= link_to consultant_path(item) do %>
               <div class="cs-image">
-                <%= image_tag(item.profileimage_url(), height:180, width: 270, class: "cs-link-img") %>
+                <%= image_tag(item.profileimage_url(), height:250, width: 250, class: "cs-link-img") %>
               </div>
           <% end %>
           <div class="cs-text">

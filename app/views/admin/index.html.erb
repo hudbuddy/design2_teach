@@ -1,7 +1,12 @@
 <div data-page="home">
-  <div class="home-top"><h1>Administration</h1></div>
+  <div class="home-top">
+    <div class="clouds-back"></div>
+    <div class="clouds-front"></div>
+    <h1>Administration</h1></div>
+
+    <%= button_to "Add Learning", new_learning_piece_path, class: "btn addlearning", method: :get%>
     <%= button_to "Add Consultant", new_consultant_path, class: "btn", method: :get%>
     <%= button_to "Add Product", new_product_path, class: "btn", method: :get%>
-    <%= button_to "Add Learning", new_learning_piece_path, class: "btn", method: :get%>
+
   </div>
 </div>

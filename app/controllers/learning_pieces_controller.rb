@@ -18,13 +18,23 @@ class LearningPiecesController < ApplicationController
     # it then shuffles the list so that the videos dont always show up the exact same or prioritize certain topics
     # after the shuffle it culls the list down to related_learning_size
     @related_learning = Array.new()
-    @learning_piece.topics.each do |tp|
-      tp.learning_pieces.each do |lp|
-          unless @related_learning.include?(lp)
-            @related_learning << lp;
-          end
+    #@learning_piece.topics.each do |tp|
+     # tp.learning_pieces.each do |lp|
+      #    unless @related_learning.include?(lp)
+      #      @related_learning << lp;
+      #    end
+      #end
+   # end
+
+    LearningPiece.all.each do |lp|
+      if lp.topic != nil and @learning_piece.topic != nil
+        if lp.topic.id == @learning_piece.topic.id and lp != @learning_piece
+          @related_learning << lp;
+        end
       end
     end
+
+
     @related_learning = @related_learning.shuffle();
     until @related_learning.length <= related_learning_size
       @related_learning.pop
@@ -111,7 +121,7 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     # Never trust parameters from the scary internet, only allow the white list through.
     def learning_piece_params
-      params.require(:learning_piece).permit(:isarticle, :visible, :title, :description_short, :description_long, :youtube_url, :picture, :user_id, :avatar, :lpimage, article_images_attributes: [:id, :articleimage], :topic_ids => [])
+      params.require(:learning_piece).permit(:isarticle, :visible, :title, :description_short, :description_long, :youtube_url, :picture, :user_id, :avatar, :lpimage, :topic_id, article_images_attributes: [:id, :articleimage])
     end
 
 

@@ -2,7 +2,7 @@
 <% if coll_type.eql? "learning_pieces" or coll_type.eql? "products" %>
   <div class="sidescrollable-wrapper bg-p">
 <% else %>
-    <div class="sidescrollable-wrapper bg-s">
+    <div class="sidescrollable-wrapper consultants-heightboost bg-p">
 <% end %>
     <div class="sidescrollable-scrollwrap">
     <!--
@@ -16,7 +16,7 @@
       Javascript logic will now operate on sidescrollable-scrollwrap instead of the wrapper
     -->
     <div class="sidescrollable-container">
-      <%= render partial: "helpers/sidescroll-item", locals: {coll_type: coll_type}, collection: coll, as: :item %>
+      <%= render partial: "helpers/sidescroll-item", locals: {coll_type: coll_type, topic: topic}, collection: coll, as: :item %>
     </div>
   </div>
   <div class="scroll-btn scroll-btn-left" data-dir="left">

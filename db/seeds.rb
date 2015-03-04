@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 userTypes = UserType.create([{ title: 'superadmin' }, { title: 'admin' }, { title: 'consultant' }, { title: 'user' }]);
-topics = Topic.create([{ title: 'Pets' }, { title: 'Education' }, { title: 'Animals' }]);
+topics = Topic.create([{ title: 'Teaching' }, { title: 'Design' }, { title: 'Policy' }]);
 users = User.create([
    { email: 'val8819@gmail.com' , password: 'supermom!', user_type_id: 1 },
    { email: 'fakesuper@gmail.com' , password: 'aaaaaaaa', user_type_id: 1 },
@@ -26,10 +26,7 @@ users.each do |u|
   u.profile = Profile.create()
 end
 
-learning_pieces.each do |lp|
-  lp.user = User.find(1)
-  lp.topics << Topic.all;
-end
+
 
 products = Product.create([
     {

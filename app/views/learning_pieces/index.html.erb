@@ -1,4 +1,46 @@
-<h1 class="section-header">Learning Pieces</h1>
+<%= javascript_include_tag "landings" %>
+
 <div class="learning-piece-index">
-    <%= render partial: "helpers/sidescroll-item", locals: { coll_type: 'learning_pieces' }, collection: @learning_pieces, as: :item %>
+  <div class="home-top">
+    <%= link_to(root_path) do %>
+        <div class="logo"></div>
+    <% end %>
+
+    <div class="arrow-container">
+      <div class="arrow"></div>
+    </div>
+    <%= link_to "Learning Pieces", learning_pieces_path, :class=> "path-button", :method => :get %>
+    <div class="clouds-back"></div>
+    <div class="clouds-front"></div>
+  </div>
+
+  <section id="learning-pieces-section" class="home-section">
+
+    <div class="learning-piece-wrapper">
+      <h2>
+        <div class="lp-index-head">Teaching</div>
+      </h2>
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces', topic: 'Teaching' }  %>
+    </div>
+  </section>
+
+  <section id="learning-pieces-section" class="home-section">
+    <div class="learning-piece-wrapper">
+      <h2>
+        <div class="lp-index-head">Design</div>
+      </h2>
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces', topic: 'Design' }  %>
+    </div>
+  </section>
+
+  <section id="learning-pieces-section" class="home-section">
+    <div class="learning-piece-wrapper">
+      <h2>
+        <div class="lp-index-head">Policy</div>
+      </h2>
+      <%= render partial: "helpers/sidescrollable", locals: { coll: @learning_pieces, coll_type: 'learning_pieces', topic: 'Policy' }  %>
+    </div>
+  </section>
+
+
 </div>
