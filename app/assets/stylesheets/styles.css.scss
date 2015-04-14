@@ -150,7 +150,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 
 .logo {
-    background: url('Logo.png');
+    background: image-url('Logo.png');
     position: absolute;
     width: 280px;
     height: 139px;
@@ -196,7 +196,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     height: 420px;
     top: 0px;
     width: 200%;
-    background-image: url('clouds1.png');
+    background-image: image-url('clouds1.png');
     background-repeat: repeat-x;
     background-position: 0px 0px;
     animation: animatedClouds 60s linear infinite;
@@ -210,7 +210,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     height: 420px;
     width: 200%;
     background-repeat: repeat-x;
-    background-image: url('clouds2.png');
+    background-image: image-url('clouds2.png');
     background-position: 0px 0px;
     animation: animatedClouds 20s linear infinite;
     -webkit-animation: animatedClouds 120s linear infinite;
@@ -804,7 +804,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 .d2l-framework-main {
     height: 340px;
     border-top: 1px solid darkgray;
-    background: url('Ground.png');
+    background: image-url('Ground.png');
 
 
 
@@ -829,7 +829,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     top: 20px;
     margin-bottom: 40px;
     margin-top: 20px;
-    background: url('FrameworkLogo.png');
+    background: image-url('FrameworkLogo.png');
 }
 
 .d2l-framework-info {
@@ -963,7 +963,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 }
 
 .learning-bottom {
-    background: url('Ground.png');
+    background: image-url('Ground.png');
     height: 287px;
 }
 
@@ -1314,7 +1314,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 .fb-link {
     width: 64px;
     height: 64px;
-    background-image: url("facebook-icon.png");
+    background-image: image-url("facebook-icon.png");
     background-size: contain;
 }
 
@@ -1323,7 +1323,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 .twitter-link {
     width: 64px;
     height: 64px;
-    background-image: url("twitterIcon.png");
+    background-image: image-url("twitterIcon.png");
     background-size: contain;
 }
 
@@ -1331,7 +1331,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 .linkedin-link {
     width: 64px;
     height: 64px;
-    background-image: url("linkedinIcon.png");
+    background-image: image-url("linkedinIcon.png");
     background-size: contain;
 }
 
