@@ -729,8 +729,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     background-size: cover;
     overflow: hidden;
     position: relative;
-    /* TODO: Take out */
-    background-image: url(http://placecreature.com//1200/800);
+
 }
 .sidescrollable-item .item-background .description-text {
     height: 100%;
