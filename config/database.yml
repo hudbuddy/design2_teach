@@ -25,7 +25,7 @@ test:
 production:
   adapter: mysql
   database: db/design2teach
-  username: root
-  password: Xg40tlRk86
-  host: localhost
+  username: design2teach
+  password: inabilitylost9explode
+  host: 127.0.0.1
 
