@@ -5,16 +5,15 @@
 
 function onResize() {
     var windowWidth = window.innerWidth;
-    if(windowWidth < 1540) {
-        var lef = parseInt($(".profile-content").css("left"));
-        lef = windowWidth - 1300;
-        if(lef > 0) {
-            $(".profile-content").css("left", lef + "px");
-        }
+
+    if(windowWidth < 1480) {
+            $(".profile-content").css("left", "20px");
+
     }
     else
     {
-        $(".profile-content").css("left", "10%");
+        var tempLeft = (windowWidth - 1480) * 0.5 + 20;
+        $(".profile-content").css("left", tempLeft + "px");
     }
 }
 

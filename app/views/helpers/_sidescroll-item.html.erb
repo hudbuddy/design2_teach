@@ -83,7 +83,10 @@
               </div>
           <% end %>
           <div class="cs-text">
-            <h3 class="cs-title"><%= item.first_name %> <%= item.last_name %></h3>
+            <%= link_to consultant_path(item) do %>
+                <h3 class="cs-title"><%= item.first_name %> <%= item.last_name %></h3>
+            <% end %>
+
             <div class="cs-desc-short">
               <%= item.title %>
             </div>
@@ -101,6 +104,7 @@
               <div class="pr-image"></div>
           <% end %>
           <div class="pr-text">
+
             <h3 class="pr-title"><%= item.title %></h3>
             <div class="pr-desc-short">
               <%= item.description %>

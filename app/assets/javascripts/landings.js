@@ -62,10 +62,32 @@ function DocumentReady() {
         $wrapper.attr('data-scrollable-dirs', scrollDirections.join(' '));
     }
 
+    function onLearnMore() {
+
+    }
+
     ResizeListContainers();
 
     //------ This Indescriminately asigns scroll buttons to cause heir hover event to try and scroll their parent with the name ".sidescrollable-wrapper" --------------
     $(".scroll-btn").hover(onScrollButtonHover, offScrollButtonHover);
+    $(".d2l-framework-head").click( function () {
+
+            $(".content-frame-learn-more").css({
+                opacity: 0,
+                transition: 'opacity 1s ease-in-out'
+            });
+
+            setInterval(function () {
+                $(".content-frame-learn-more").hide();
+                $(".content-frame-learn-less").css({
+                    opacity: 1,
+                    transition: 'opacity 1s ease-in-out'
+                });
+            }, 1);
+
+
+
+    });
 
     $(window).on('resize', ResizeListContainers);
     $('.sidescrollable-wrapper').each(function () {

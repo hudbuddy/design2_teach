@@ -611,6 +611,7 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     overflow: hidden;
 }
 .cs-title {
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -813,12 +814,30 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 }
 
 .d2l-content-frame {
+    position: relative;
     margin: 50px 0px 0px 20px;
     width: 740px;
     height: 240px;
     background: #f1f1f1;
     border-radius: 10px;
     border: 1px darkgray solid;
+}
+
+.content-frame-learn-more {
+    position: absolute;
+    width: 740px;
+    height: 240px;
+    z-index: 41;
+}
+
+.content-frame-learn-less {
+  opacity: 0.0;
+  position: absolute;
+  margin-top: 30px;
+  width: 740px;
+  height: 240px;
+  z-index: 40;
+
 }
 
 .d2l-framework-logo {
@@ -854,17 +873,33 @@ h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
 
 
 .d2l-framework-head {
+    cursor: pointer;
+    color: #535353;
     position: absolute;
     line-height: 50px;
     height: 52px;
     width: 230px;
-    right: 10px;
-    bottom: -10px;
-
+    right: 20px;
+    bottom: 20px;
+    font-size: 24px;
+    text-align: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     padding: 0px 10px 0px 10px;
+
+
+}
+
+.d2l-framework-head:hover {
+  background-color: #dddddd;
+
+}
+
+.d2l-framework-head:active {
+  background-color: #aaaaaa;
+  right: 18px;
+  bottom: 18px;
 
 }
 
